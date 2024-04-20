@@ -1,23 +1,26 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Técnologia em Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Trabalho Interdisciplinar: Aplicaçõse Web`
 
-`SEMESTRE`
+`Primeiro Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto da Dreams Lab é um projeto que busca solucionar o problema existente entre padarias e clientes com a logística de realizações de encomendas e entregas de produtos, contando também funcionalidades para facilitar
+o controle de estoque das padarias.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriela dos Reis da Silva
+* Daniel Filipe Soares Corrêa Vilaça  
+* Gustavo Moreira
+* Esther Maellen Silva
+* Gabriel Balduíno
+* Mauro Lúcio Gama
 
 ## Orientador
 
-* Nome completo do professor 1
+* Wesley Dias Maciel
 
 ## Instruções de utilização
 
