@@ -1,0 +1,63 @@
+header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px #7501b92d;
+
+    & .main-info{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        & .logo{
+            display: flex;
+            align-items: center;
+        }
+
+        & img{
+            height: 50px;
+        }
+
+        & .links{
+            display: flex;
+            gap: 20px;
+
+            & a{
+                font-size: 20px;
+                text-decoration: none;
+                color: black;
+                transition: 0.2;
+            }
+
+            & a:hover{
+                color: #8743FB;
+            }
+        }
+    }
+
+    & .links-right{
+        display: flex;
+        gap: 20px;
+
+        & a{
+            display: flex;
+            align-items: center;
+        }
+
+        & img{
+            height: 50px;
+            transition: 0.2s;
+        }
+
+        & img:hover{
+            opacity: 0.6;
+        }
+    }
+}
+
+.active-page{
+    color: #8743FB !important;
+}

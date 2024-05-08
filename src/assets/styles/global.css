@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins Default';
+}
+
+::selection{
+    background-color: rgb(161, 39, 231);
+    color: white;
+}
+
+@font-face {
+    font-family: 'Poppins Default';
+    src: url('../font/Poppins-Regular.ttf');
+}
+
+.form-input{
+    border-radius: 20px;
+    padding: 3px 10px;
+    background-color: #FDFDFD;
+    border: solid #C3C3C3 1px;
+    transition: 0.2s;
+    outline: none;
+}
+
+.form-input::placeholder{
+    color: #AAAAAA;
+}
+
+.form-input:focus{
+    border-color: #474747;
+}
+
+.form-input:disabled{
+    background-color: #ececec;
+}
+
+.error-message{
+    color: red;
+    position: relative;
+    bottom: 0;
+}
+
+.error-box{
+    width: 100%;
+    height: 40px;
+}
+
+.free{
+    color: #02C35B;
+}
+
+.medium{
+    color: yellow;
+}
+
+.high{
+    color: red;
+}

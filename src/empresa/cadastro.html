@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre sua Empresa</title>
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="stylesheet" href="../assets/styles/empresa/cadastro.css">
+    <link rel="shortcut icon" href="../assets/images/site/icon.svg" type="image/svg">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="register-form">
+                <img src="../assets/images/site/Logo.svg" alt="logo">
+                <h1 class="enterprise-text">Enterprise</h1>
+                
+                <h3 class="form-title">Dados da empresa:</h3>
+                <input type="text" id="enterprise-name" placeholder="Nome da empresa" class="form-input">
+                <input type="text" id="enterprise-phone" placeholder="Telefone da empresa" class="form-input">
+                <input type="text" id="enterprise-mail" placeholder="Email da empresa" class="form-input">
+                <input type="text" id="cnpj" placeholder="CNPJ" class="form-input">
+                <div class="single-line">         
+                    <input type="text" id="cep" placeholder="CEP" class="form-input">
+                    <input type="text" id="estate" placeholder="Estado" class="form-input" disabled>
+                    <input type="text" id="city" placeholder="Cidade" class="form-input" disabled>
+                </div>
+                <input type="text" id="address" placeholder="Logradouro com número" class="form-input">
+                
+
+                <h3 class="form-title">Dados do proprietário:</h3>
+                <input type="text" id="name" placeholder="Nome" class="form-input">
+                <input type="text" id="email" placeholder="Endereço de e-mail" class="form-input">
+                <input type="text" id="cpf" placeholder="CPF" class="form-input">
+                <input type="password" id="password" placeholder="Digite sua senha" class="form-input">
+                <input type="password" id="confirm-password" placeholder="Confirme sua senha sua senha" class="form-input">
+
+                <p class="login-redirect">Já possui uma conta? <a href="../login.html">Faça seu Login</a></p>
+                <button type="button" id="register-button">
+                    CADASTRE-SE
+                </button>
+                <div class="error-box">
+                    <!-- <p class="error-message">Preencha todos os campos corretamente!</p> -->
+                </div>
+            </div>
+            <div class="illustration">
+                <h1>Alavanque as vendas do seu negócio!</h1>
+                <img src="../assets/images/site/enterprise-register.svg" alt="enterprise">
+            </div>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/scripts/empresa/cadastro.js" type="module"></script>
+</body>
+</html>

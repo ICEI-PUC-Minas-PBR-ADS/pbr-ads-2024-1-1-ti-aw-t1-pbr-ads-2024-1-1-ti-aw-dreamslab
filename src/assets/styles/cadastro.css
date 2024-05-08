@@ -1,0 +1,225 @@
+main{
+    display: flex;
+    width: 100%;
+
+    & section{
+        width: 100%;
+        height: 100vh;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+
+        & div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & .register-form{
+            width: 40%;
+            flex-direction: column;
+            gap: 10px;
+            & img{
+                width: 30%;
+            }
+
+            & h1{
+                font-weight: 300;
+            }
+
+            & input{
+                font-size: 18px;
+                width: 70%;
+            }
+
+            & .login-redirect{
+                font-size: 15px;
+
+                & a{
+                    color: #7701B9;
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+
+                & a:hover{
+                    opacity: 0.8;
+                }
+            }
+            
+
+            & .register-enterprise{
+                color: #7701B9;
+                transition: 0.2s;
+            }
+
+            & .register-enterprise:hover{
+                color: #9616e0;
+            }
+
+            & .mobile-register-enterprise{
+                display: none;
+            }
+
+            & #register-button{
+                transition: 0.3s;
+                background: rgb(119,1,185);
+                background: linear-gradient(90deg, rgba(119,1,185,0.5984768907563025) 35%, rgba(5,1,235,0.5984768907563025) 100%);
+                color: white;
+                font-size: 18px;
+                padding: 5px;
+                border: none;
+                border-radius: 20px;
+                width: 70%;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            & #register-button:hover{
+                opacity: 0.7; 
+            }
+        }
+
+        & .illustration{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            background: rgb(119,1,185);
+            background: linear-gradient(180deg, rgba(119,1,185,0.5984768907563025) 35%, rgba(5,1,235,0.5984768907563025) 100%);
+        
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+
+            & h1{
+                font-size: 38px;
+                color: white;
+                font-weight: 300;
+            }
+
+            & img{
+                width: 55%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    main{
+        & section{
+            & .register-form{      
+                & h1{
+                    font-size: 18px;
+                }
+    
+                & input{
+                    width: 80%;
+                }
+            }
+    
+            & .illustration{
+                & h1{
+                    font-size: 32px;
+                    color: white;
+                    font-weight: 300;
+                }
+
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 1080px) {
+    main{
+        & section{
+            & .register-form{      
+                width: 50%;
+
+                & h1{
+                    font-size: 18px;
+                }
+    
+                & input{
+                    width: 80%;
+                }
+            }
+    
+            & .illustration{
+                width: 50%;
+    
+                & h1{
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 300;
+                }
+    
+                & img{
+                    width: 65%;
+                }
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 840px){
+    main{
+        & section{
+            & .register-form{      
+                width: 100%;
+
+                & h1{
+                    font-size: 18px;
+                }
+    
+                & input{
+                    width: 80%;
+                }
+            }
+    
+            & .illustration{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 430px){
+    main{
+        & section{
+            & .register-form{   
+                & h1{
+                    font-size: 24px;
+                    width: 95%;
+                    text-align: center;
+                }
+    
+                & input{
+                    width: 95%;
+                }
+
+                & .enterprise-redirect{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 370px){
+    main{
+        & section{
+            & .register-form{   
+                & .enterprise-redirect{
+                    display: none;
+                }
+
+                & .mobile-register-enterprise{
+                    display: block;
+                }
+            }
+        }
+    }
+}
