@@ -1,0 +1,213 @@
+main {
+    margin-top: 20px;
+}
+
+.top {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    margin: 80px;
+    padding: 10px;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 25pt;
+    font-weight: normal;
+}
+
+.dados h2 {
+    margin-bottom: 15px;
+}
+
+.botao {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.botao:hover {
+    background-color: #611adb;
+}
+
+.content {
+    padding-top: 10px;
+    text-align: center;
+    
+}
+
+
+.dados {
+    text-align: center;  
+}
+
+.dadosP {
+    margin-bottom: 20px;
+    padding: 20px;  
+}
+
+.dadosP > input {
+    margin: 2px;
+    padding: 10px;
+    border-radius: 25px;
+    border: solid 1px #C3C3C3;
+}
+
+
+.dadosP > .email {
+    padding-right: 20px;
+}
+
+.dadosE > .rua {
+    width: 40%;
+    display: block;
+    padding: 10px;
+    padding-right: 10px;
+}
+
+.dadosE {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.dadosE > input {
+    width: 20%;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 25px;
+    border: solid 1px #C3C3C3; 
+}
+
+.dadosP > h2 {
+    text-align: left;
+    margin-left: 10px;
+    
+}
+
+.dadosE > h2 {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.dadosP > button  {
+    display: block;
+    margin-top: 15px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.541);
+}
+
+.dadosP > button:hover {
+    background-color: #611adb;
+    
+}
+
+.dadosE > button  {
+    display: block;
+    margin-top: 15px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.541);
+}
+
+.dadosE > button:hover {
+    background-color: #611adb;
+    
+}
+
+ button {
+    margin: 2px;
+    padding: 10px 80px;
+    border-radius: 30px;
+    background-color: #743DD2;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.178);
+    border: none;
+}
+
+span {
+    color: #743DD2;
+}
+
+button span {
+    color: white;
+}
+
+sup {
+    font-size: 15pt;
+    color: #C3C3C3;
+    
+}
+
+sub {
+    color: #C3C3C3;
+}
+
+.itens-top{
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    margin: 80px;
+    padding: 10px;
+    margin: 0px;
+    padding: 70px;
+    border-radius: 20px 20px 0px 0px;
+    border-top: solid rgba(63, 62, 62, 0.11);
+}
+
+& .search{
+    width: 150%;
+    display: flex;
+    overflow: visible;
+
+    & input{
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.178);
+        width: 90%;
+        z-index: +100;
+        font-size: 20px;
+        border: solid 1px #C3C3C3;
+        border-radius: 30px;
+        padding: 10px;
+        padding-left: 50px;   
+        background-image: url("../images/site/search-icon.svg");
+        background-repeat: no-repeat;
+        background-position: 10px;
+    }
+
+    & button{
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.178);
+        width: 34%;
+        padding-left: 17%;
+        position: relative;
+        left: -16%;
+        text-align: right;
+        border: none;
+        background-color: #743DD2;
+        text-align: center;
+        border-radius: 30px;
+        font-size: 26px;
+        z-index: +1;
+        color: white;
+    }
+
+    & button:hover {
+        background-color: #611adb;
+    }
+}
+
+.itens {
+    display: flex;
+    justify-content: center;
+}
+
+.popular-orders {
+    display: flex;
+}
+
+.card {  
+    border: solid rgba(63, 62, 62, 0.11);
+    padding: 10px;
+    margin: 0px 40px;
+    border-radius: 20px;
+}
+
+
+.card-content {
+    border: solid rgba(63, 62, 62, 0.041);
+}

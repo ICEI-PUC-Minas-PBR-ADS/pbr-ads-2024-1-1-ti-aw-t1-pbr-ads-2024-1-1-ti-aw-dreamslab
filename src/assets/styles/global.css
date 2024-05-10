@@ -58,3 +58,21 @@
 .high{
     color: red;
 }
+
+
+
+.aberto {
+    color: rgb(235, 235, 15);
+}
+
+.finalizado {
+    color: #02C35B;
+}
+
+.cancelado {
+    color: red;
+}
+
+.aceito {
+    color: gray;
+}
