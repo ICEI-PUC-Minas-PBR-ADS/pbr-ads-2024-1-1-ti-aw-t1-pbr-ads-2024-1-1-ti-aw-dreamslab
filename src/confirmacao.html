@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <img src="Imagens/Logo-alone.svg" />
+        <li><a href="">Home</a></li>
+        <li><a href="">Produtos</a></li>
+        <li><a href="">Lojas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container">
+    <h3>Finalize seu pedido</h3>
+    <p><strong>Itens Selecionados:</strong> <span id="selected-items"></span></p>
+    <div id="lista-itens">
+    </div>
+    <div id="total">Total: $<span id="total-valor">0.00</span></div>
+    <script src="script.js"></script>
+    </div>
+  </section>
+
+  <section class="container">
+    <h3>Dados do Pedido</h3>
+    <div class="container">
+      <strong>Escolha a forma de pagamento:</strong>
+      <div class="cont">
+        <div class="card">
+          <input type="radio" id="credit-card" name="payment" value="Cartão" checked>
+          <label for="credit-card"">Cartão</label>
+          <img class=" imagem" src="Imagens/cartao.png" alt="Cartão"">
+        </div>
+        <div class=" card">
+            <input type="radio" id="pix" name="payment" value="pix">
+            <label for="pix">Pix</label>
+            <img class="imagem" src="Imagens/pix.png" alt="Pix"">
+        </div>
+        <div class=" card">
+            <input type="radio" id="cash" name="payment" value="Dinheiro">
+            <label for="cash">Dinheiro</label>
+            <img class="imagem" src="Imagens/dinheiro.png" alt="Dinheiro"">
+        </div>
+      </div>
+    </div>
+            <div class="container">
+              <strong>Escolha a forma de Entrega:</strong>
+              <div class="cont">
+                <div class="card">
+                  <input type="radio" id="delivery" name="delivery" value="Normal" checked>
+                  <label for="delivery">Delivery</label>
+                  <img class="imagem" src="Imagens/delivery.png" alt="Delivery"">
+        </div>
+        <div class=" card">
+                  <input type="radio" id="combinar-delivery" name="delivery" value="Normal">
+                  <label for="combinar-delivery">Entrega à combinar</label>
+                  <img class="imagem" src="Imagens/entregaacombinar.png" alt="Entrega à combinar"">
+        </div>
+        <div class=" card">
+                  <input type="radio" id="buscar-pedido" name="delivery" value="Normal">
+                  <label for="buscar-pedido">Buscar pedido</label>
+                  <img class="imagem" src="Imagens/buscarpedido.png" alt="Buscar pedido"">
+        </div>
+                
+      </div>
+    </div>
+    <button class="finalizar-pedido">Finalizar seu pedido!</button>
+  </section>
+  
+  <footer class="footer">
+      <p>&copy; 2024 Drems Lab.</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
