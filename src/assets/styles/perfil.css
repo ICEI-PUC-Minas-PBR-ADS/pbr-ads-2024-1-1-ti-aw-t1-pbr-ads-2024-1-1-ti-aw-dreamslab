@@ -211,3 +211,23 @@ sub {
 .card-content {
     border: solid rgba(63, 62, 62, 0.041);
 }
+
+div>.NomeP{
+    text-align: center;
+}
+
+div>.info {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+div>.status {
+    display: flex;
+    justify-content: space-around;
+}
+
+div>#idPedido {
+    padding-top: 20px;
+    text-align: center;
+}

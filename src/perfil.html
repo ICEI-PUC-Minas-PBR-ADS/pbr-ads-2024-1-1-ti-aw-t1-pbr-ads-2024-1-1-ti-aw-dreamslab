@@ -35,23 +35,23 @@
         <section class="start">
             <div class="top">
                 <div class="content">
-                    <h1>Olá, <span>[nome do usuário]</span></h1>
+                    <h1>Olá, <span id="nomeUser">[nome do usuário]</span></h1>
                     <img src="assets/images/site/icone350x350.png" alt="">
                     <br>
-                    <button class="botao"><span>Trocar de foto</span></button>
+                    <button class="botao" id="btnFoto"><span>Trocar de foto</span></button>
                 </div>
                 <div class="dados">
                     <div class="dadosP">
                         <sub>Campos com um * são obrigatórios!</sub>
                         <h2>Dados pessoais:</h2>
-                        <input type="text" placeholder="[nome do usuário]"><sup>*</sup>
+                        <input type="text" id="nomeInfo" placeholder="[nome do usuário]"><sup>*</sup>
                         <input type="text" class="email" placeholder="email@email.com"><sup>*</sup>
                         <input type="text" placeholder="telefone">
                         
                         <input type="password" class="senha" placeholder="Novas senha">
                         <input type="password" class="senha" placeholder="Confirme a nova senha">
                         <input type="password" class="senha" placeholder="Senha atual">
-                        <button><span>Atualizar informações</span></button>
+                        <button id="atualizaInfo"><span>Atualizar informações</span></button>
                     </div>
                     <div class="dadosE">
                         <h2>Dados para entrega:</h2>
@@ -85,13 +85,13 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-                            <br>
+                            
                             <div class="status">
                                 <p>Status:</p>
-                                <p class="finalizado">Finalizado</p>
+                                <p class="aberto">Aberto</p>
                             </div>
                             <br>
-                            <p>#009012310139</p>
+                            <p id="idPedido">#009012310139</p>
                         </div>
                     </div>
                     <div class="card">
@@ -104,13 +104,13 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-                            <br>
+                            
                             <div class="status">
                                 <p>Status:</p>
                                 <p class="finalizado">Finalizado</p>
                             </div>
                             <br>
-                            <p>#009012310139</p>
+                            <p id="idPedido">#009012310139</p>
                         </div>
                     </div>
                     <div class="card">
@@ -123,13 +123,13 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-                            <br>
+                            
                             <div class="status">
                                 <p>Status:</p>
-                                <p class="finalizado">Finalizado</p>
+                                <p class="cancelado">Cancelado</p>
                             </div>
                             <br>
-                            <p>#009012310139</p>
+                            <p id="idPedido">#009012310139</p>
                         </div>
                     </div>
                     <div class="card">
@@ -142,13 +142,13 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-                            <br>
+                            
                             <div class="status">
                                 <p>Status:</p>
-                                <p class="finalizado">Finalizado</p>
+                                <p class="aceito">Aceito</p>
                             </div>
                             <br>
-                            <p>#009012310139</p>
+                            <p id="idPedido">#009012310139</p>
                         </div>
                     </div>
                         </div>
@@ -158,5 +158,6 @@
             
         </section>
     </main>
+    <script src="assets/scripts/empresa/perfil.js"></script>
 </body>
 </html>
