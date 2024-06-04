@@ -83,7 +83,7 @@ class Database {
                 hasDeleted = true;
             });
             
-            return true;
+            return hasDeleted;
         }catch(error){
             console.log(error);
             return false;
