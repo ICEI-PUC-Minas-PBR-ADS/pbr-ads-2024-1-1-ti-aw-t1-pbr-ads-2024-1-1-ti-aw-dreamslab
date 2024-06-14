@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/styles/perfil.css">
     <link rel="stylesheet" href="assets/styles/global.css">
 </head>
-<body>
+<body onload="dadosUser()">
     <header>
         <div class="main-info">
             <a href="home.html" class="logo">
@@ -45,12 +45,12 @@
                         <sub>Campos com um * são obrigatórios!</sub>
                         <h2>Dados pessoais:</h2>
                         <input type="text" id="nomeInfo" placeholder="[nome do usuário]"><sup>*</sup>
-                        <input type="text" class="email" placeholder="email@email.com"><sup>*</sup>
-                        <input type="text" placeholder="telefone">
+                        <input type="text" id="emailInfo" class="email" placeholder="email@email.com"><sup>*</sup>
+                        <input type="text" id="telInfo" placeholder="telefone">
                         
                         <input type="password" class="senha" placeholder="Novas senha">
                         <input type="password" class="senha" placeholder="Confirme a nova senha">
-                        <input type="password" class="senha" placeholder="Senha atual">
+                        <input type="password" id="senhaInfo" class="senha" placeholder="Senha atual">
                         <button id="atualizaInfo"><span>Atualizar informações</span></button>
                     </div>
                     <div class="dadosE">
