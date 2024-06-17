@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Pedido</title>
+    <link rel="shortcut icon" href="../assets/images/site/icon.svg" type="image/svg">
+    <link rel="stylesheet" href="../assets/styles/empresa/DetalhesPedidoEmpresa.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="stylesheet" href="../assets/styles/header.css">
+</head>
+<body>
+    <header>
+        <div class="main-info">
+            <a href="../home.html" class="logo">
+                <img src="../assets/images/site/Logo-alone.svg" alt="logo">
+            </a>
+            <div class="links">
+                <a href="../home.html" class="active-page">Home</a>
+                <a href="../produtos.html">Produtos</a>
+                <a href="../lojas.html">Lojas</a>
+            </div>
+        </div>
+        <div class="links-right">
+            <a href="../perfil.html">
+                <img src="../assets/images/site/user-icon.png" alt="user icon">
+            </a>
+            <a href="">
+                <img src="../assets/images/site/cart-icon.png" alt="cart icon">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <div class="pedidoid">
+                    <h1>Detalhes do Pedido <span id="idpedido">#009012310139</span></h1>
+                </div>
+                <div class="content">
+                    <div id="itens" class="info">
+                        <h2>Itens</h2>
+                        <div class="item">
+                            <div class="l">
+                                <div>
+                                    <p class="produto" id="produto">Pizza 4 Queijos</p>
+                                </div>
+                                    <div>
+                                        <p class="produto" id="prec">R$49,90</p>
+                                    </div>
+                            </div>
+                            <span>1x</span>
+                        </div>
+                        <div class="item">
+                            <div class="l">
+                                <div>
+                                    <p class="produto" id="produto">Pão Francês</p>
+                                </div>
+                                    <div>
+                                        <p class="produto" id="prec">R$3,90</p>
+                                    </div>
+                            </div>
+                            <span>5x</span>
+                        </div>
+                        <div id="total">
+                            <span>Total</span>
+                            <span>R$53,8</span>
+                        </div>
+                    </div>
+                    <div id="dadosP" class="info">
+                        <h2>Dados do Pedido</h2>
+                        <p>Forma de pagamento:</p>
+                        <div class="detalhes">
+                            <div class="img"><img src="../assets/images/site/cartao.png" alt=""></div>
+                            <div class="status">
+                                <span>Catão de Débito VISA</span>
+                                <span>Status:</span>
+                            </div>
+                            
+                            <div class="status2">
+                                <span>**** **** **** 1234</span>
+                                <span class="finalizado">Aprovado</span>
+                            </div>
+                        </div>
+                        <p>Forma de Entrega:</p>
+                        <div class="detalhes">
+                            <span>Delivery em:</p>
+                            <span>Belo Horizonte</span>
+                            <span>Barreiro, Av. Afonso Vaz de Melo, 1200</span>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+
+            <div class="down">
+                <div class="statusP">
+                    <div class="statustop">
+                        <p>Status</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                      </div><span id="sinal"></span>
+                    <div class="statusdown">
+                        <button type="button" id="cancelar">Cancelar Pedido</button>
+                        <span id="statusParagrafo">Atulizar Status:</span>
+                        <select id="status">
+                            <option class="value" value="0">Aceito</option>
+                            <option class="value" value="33">Em Preparo</option>
+                            <option class="value" value="66">Pronto p/ Entrega</option>
+                            <option class="value" value="100">Entregue</option>
+                          </select>
+                        <button type="button" id="salvar">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../assets/scripts/empresa/DetalhesPeidosEmpresa.js"></script>
+</body>
+</html>
