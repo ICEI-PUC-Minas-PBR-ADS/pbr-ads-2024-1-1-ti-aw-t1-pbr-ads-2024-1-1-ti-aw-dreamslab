@@ -1,28 +1,8 @@
 import Database from "../lib/database/Database.js";
 
-class UsersModel extends Database{
+class BusinessModel extends Database{
 
-    #table = "users";
-
-    async createUser(userData){
-        const dataReturn = {
-            hasCreated: false,
-            userId: null
-        }
-
-        let idToCreate;
-        await this.getLastId(this.#table).then(async function(lastId){
-            idToCreate = lastId + 1;
-            userData.id = idToCreate; 
-        });
-
-        await this.createData('users', userData, idToCreate).then((result) =>{
-            dataReturn.hasCreated = result;
-            dataReturn.userId = idToCreate;
-        });
-
-        return dataReturn;
-    }
+    #table = "business";
 
     async createBusiness(businessData){
         const dataReturn = {
@@ -31,12 +11,12 @@ class UsersModel extends Database{
         }
 
         let idToCreate;
-        await this.getLastId('business').then(async function(lastId){
+        await this.getLastId(this.#table).then(async function(lastId){
             idToCreate = lastId + 1;
             businessData.id = idToCreate; 
         });
 
-        await this.createData('business', businessData, idToCreate).then((result) =>{
+        await this.createData(this.#table, businessData, idToCreate).then((result) =>{
             dataReturn.hasCreated = result;
             dataReturn.businessId = idToCreate;
         });
@@ -45,7 +25,7 @@ class UsersModel extends Database{
     }
 }
 
-export default UsersModel;
+export default BusinessModel;
 
 // const db = new Database();
 // const userToCreate = {

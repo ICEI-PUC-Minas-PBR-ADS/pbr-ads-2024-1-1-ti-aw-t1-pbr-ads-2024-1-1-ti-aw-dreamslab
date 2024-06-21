@@ -24,8 +24,12 @@ class Database {
         const dataQuery = query(dataCollection, where(field, "==", value));
         const querySnapshot = await getDocs(dataQuery);
         const dataById = querySnapshot.docs.map(function(doc){
-            return  doc.data();
+            return doc.data();
         });
+        
+        if(typeof dataById[0] === 'undefined'){
+            return [];
+        }
         return dataById[0];
     }
 
@@ -44,7 +48,6 @@ class Database {
     async createData(table, data, id) {
         try {
             const idToCreate = table + "_" + id;
-            console.log(idToCreate)
             let result = false;
             await setDoc(doc(db, table, idToCreate), data).then(()=>{
                 result = true;
@@ -58,7 +61,7 @@ class Database {
 
     async updateData(table, data, id){
         try {
-            let dataToUpdate = await this.getById(table, id).then(async function(dataToUpdate){
+            let dataToUpdate = await this.getByField(table, "id", id).then(function(dataToUpdate){
                 for(let key in data){
                     if(dataToUpdate.hasOwnProperty(key)){
                         dataToUpdate[key] = data[key];
@@ -73,6 +76,7 @@ class Database {
             return updateResponse;
         } catch (err) {
             console.log(err);
+            return false;
         } 
     }
 

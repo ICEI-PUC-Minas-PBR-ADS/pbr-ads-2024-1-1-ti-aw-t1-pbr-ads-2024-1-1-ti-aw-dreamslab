@@ -1,27 +1,45 @@
-import Database from "../app/lib/database/Database.js";
+import UsersController from "../app/controller/UsersController.js";
+import FormValidator from "../app/lib/form/FormValidator.js";
 
-const db = new Database();
+$(function(){
+    if(localStorage.getItem("isBusiness") != null){
+        window.location = "../empresa/home.html";
+        return;
+    }
 
-const userToCreate = {
-    "id": "",
-    "name": "asdasdaadsa create 3",
-    "email": "testecreate@cretee.com",
-    "phone": "3333333"
-};
- 
-// create data example
-// await db.getLastId('users').then(async function(lastId){
-//     userToCreate.id = Number(lastId) + 1;
-//     let idToCreate = lastId + 1;
-//     console.log(await db.createData('users', userToCreate, idToCreate));
-// })
+    if(localStorage.getItem("userId") != null){
+        window.location = "./home.html";
+        return;
+    }
+})
 
-//update data example
-// console.log(await db.updateData('users', userToCreate, '1'));
+$("#login-button").on("click", function(){
+    const formValidator = new FormValidator(".login-form");
+    if(formValidator.formIsValid() == false){
+        return;
+    }
 
-// userToCreate.id = userIdToCreate;
-// console.log(userIdToCreate);
-// console.log(await db.createData('users', userToCreate, userToCreate));
+    const dataToLogin = {
+        email: $("#email").val(),
+        password: $("#password").val(),
+    }
 
-//delete user example
-console.log(await db.deleteData("users", "users_5"));
+    new UsersController().authenticateUser(dataToLogin).then((result)=>{
+        if(result.status == false){
+            $(".error-message").html(result.message);
+            return;
+        }
+        console.log(result);
+        if(result.hasBusiness == true){
+            localStorage.setItem("userId", result.userId);
+            localStorage.setItem("isBusiness", true);
+            window.location = "../empresa/home.html";
+        }
+
+        localStorage.setItem("userId", result.userId);
+        window.location = "./home.html";
+        return;
+    });
+
+    return;
+});

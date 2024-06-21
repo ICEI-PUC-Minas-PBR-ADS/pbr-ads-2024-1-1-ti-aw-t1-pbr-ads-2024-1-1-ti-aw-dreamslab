@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(Imagens/register-image.svg);
+  }
+  
+  header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: .1rem #efe3f2 solid;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 5px;
+    justify-content: space-between;
+    border: .1rem #efe3f2 solid;
+  }
+  
+  .imagem {
+    width: 110px;
+    height:110px;
+    background-color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  .container {
+    background-color:#ffffff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: .1rem #efe3f2 solid;
+    border-radius: .5rem;
+  }
+  .cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cont2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: 200px;
+    height: 170px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  
+  }

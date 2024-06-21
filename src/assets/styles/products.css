@@ -1,0 +1,145 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    section{
+        width: 100%;
+    }
+
+    .start{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 5px;
+
+        & .search-box{
+            width: 80%;
+            margin-left: 250px;
+            display: flex;
+            
+            & .search{
+                width: 100%;
+                display: flex;
+                overflow: visible;
+
+                & input{
+                    outline: none;
+                    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.178);
+                    width: 66%;
+                    z-index: +100;
+                    font-size: 26px;
+                    border: solid 1px #C3C3C3;
+                    border-radius: 30px;
+                    padding: 10px;
+                    padding-left: 50px;
+                    background-image: url("../images/site/search-icon.svg");
+                    background-repeat: no-repeat;
+                    background-position: 10px;
+                }
+
+                & button{
+                    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.178);
+                    width: 34%;
+                    padding-left: 14%;
+                    position: relative;
+                    left: -16%;
+                    text-align: right;
+                    border: none;
+                    background-color: #743DD2;
+                    text-align: center;
+                    border-radius: 30px;
+                    font-size: 26px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    color: white;
+                } 
+
+                & button:hover{
+                    background-color: #7f52cc;
+                }
+            }
+        }
+    }
+
+    .itens{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+
+        .title{
+            width: 100%;
+            font-size: 38px;
+            text-align: center;
+            font-weight: 300;
+
+            & span{
+                color: #743DD2;
+            }
+        }
+
+        & .popular-orders{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            & .card{
+                box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.205);
+                height: 450px;
+                background-color: #FFFFFF;
+                border: solid 1px #DDDDDD;
+                border-radius: 20px;
+                width: 20%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                & img{
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    height: 50%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                & .card-content{
+                    padding: 10px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    & .delivery{
+                        width: 100%;
+                        text-align: left;
+                    }
+
+                    & .name, .price{
+                        font-weight: 300;
+                    }
+
+                    & .price{
+                        font-size: 38px;
+                    }
+
+                    & .store{
+                        margin-top: 60px;
+                        color: rgba(128, 128, 128, 0.596);
+                        transition: 0.2s;
+                    }
+
+                    & .store:hover{
+                        color: rgba(117, 117, 117, 0.774);
+                    }
+                }
+            }
+        }
+    }
+}

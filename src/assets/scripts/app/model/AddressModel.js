@@ -1,51 +1,42 @@
 import Database from "../lib/database/Database.js";
 
-class UsersModel extends Database{
+class AddressModel extends Database{
 
-    #table = "users";
+    #table = "address";
 
-    async createUser(userData){
+    async createAddress(addressData){
         const dataReturn = {
             hasCreated: false,
-            userId: null
         }
 
         let idToCreate;
         await this.getLastId(this.#table).then(async function(lastId){
             idToCreate = lastId + 1;
-            userData.id = idToCreate; 
+            addressData.id = idToCreate; 
         });
 
-        await this.createData('users', userData, idToCreate).then((result) =>{
+        await this.createData(this.#table, addressData, idToCreate).then((result) =>{
             dataReturn.hasCreated = result;
-            dataReturn.userId = idToCreate;
         });
 
         return dataReturn;
     }
 
-    async createBusiness(businessData){
+    async updateAddress(addressToUpdate){
         const dataReturn = {
-            hasCreated: false,
-            businessId: null
+            hasUpdated: false,
         }
 
-        let idToCreate;
-        await this.getLastId('business').then(async function(lastId){
-            idToCreate = lastId + 1;
-            businessData.id = idToCreate; 
-        });
-
-        await this.createData('business', businessData, idToCreate).then((result) =>{
-            dataReturn.hasCreated = result;
-            dataReturn.businessId = idToCreate;
-        });
+        const idToUpdate = addressToUpdate.id;
+        await this.updateData(this.#table, addressToUpdate, idToUpdate).then((result)=>{
+            dataReturn.hasUpdated = result;          
+        })
 
         return dataReturn;
     }
 }
 
-export default UsersModel;
+export default AddressModel;
 
 // const db = new Database();
 // const userToCreate = {

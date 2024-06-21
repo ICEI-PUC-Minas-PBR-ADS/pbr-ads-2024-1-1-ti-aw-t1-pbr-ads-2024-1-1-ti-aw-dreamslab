@@ -9,59 +9,115 @@
     <link rel="stylesheet" href="assets/styles/perfil.css">
     <link rel="stylesheet" href="assets/styles/global.css">
 </head>
-<body onload="dadosUser()">
+<body>
+    <div class="load">
+        <div class="custom-loader"></div>
+    </div>
+    <noscript>
+        O JavaScript é obrigatório! Por Favor Ative!
+    </noscript>
     <header>
         <div class="main-info">
             <a href="home.html" class="logo">
                 <img src="../src/assets/images/site/Logo-alone.svg" alt="logo">
             </a>
             <div class="links">
-                <a href="home.html" class="active-page">Home</a>
+                <a href="home.html">Home</a>
                 <a href="produtos.html">Produtos</a>
-                <a href="lojas.html">Lojas</a>
             </div>
         </div>
         <div class="links-right">
             <a href="perfil.html">
                 <img src="./assets/images/site/user-icon.png" alt="user icon">
             </a>
-            <a href="">
+            <a class="cart-icon">
                 <img src="./assets/images/site/cart-icon.png" alt="cart icon">
             </a>
         </div>
     </header>
 
     <main>
+        <section class="cart-content closed" style="display: none;">
+            <div class="sidebar" style="right: -400px;">   
+                <div class="sidebar-content">
+                    <div class="sidebar-title">  
+                        <h1>Carrinho</h1>
+                        <button class="close-cart">x</button>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-item-title">
+                            <h1>Pizza 4 Queijos</h1>
+                            <h1>R$50,00</h1>
+                        </div>
+                        <div class="cart-item-actions">
+                            <h2 class="item-quantity">1x</h2>
+                            <div class="cart-actions">
+                                <button class="remove">-</button>
+                                <button class="add">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-item-title">
+                            <h1>Pizza 4 Queijos</h1>
+                            <h1>R$50,00</h1>
+                        </div>
+                        <div class="cart-item-actions">
+                            <h2 class="item-quantity">1x</h2>
+                            <div class="cart-actions">
+                                <button class="remove">-</button>
+                                <button class="add">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="final-value">
+                        <h1>Total:</h1>
+                        <h1 class="cart-value">R$50,50</h1>
+                    </div>
+                    <button>Finalizar Pedido</button>
+                </div>
+            </div>
+        </section>
         <section class="start">
             <div class="top">
                 <div class="content">
                     <h1>Olá, <span id="nomeUser">[nome do usuário]</span></h1>
                     <img src="assets/images/site/icone350x350.png" alt="">
                     <br>
-                    <input type="file" accept="image" id="SeleçaoImagem" />
                     <button class="botao" type="file" id="btnFoto"><span>Trocar de foto</span></button>
+                    <!-- <input type="file" accept="image" id="SeleçaoImagem" /> -->
                 </div>
                 <div class="dados">
                     <div class="dadosP">
-                        <sub>Campos com um * são obrigatórios!</sub>
                         <h2>Dados pessoais:</h2>
-                        <input type="text" id="nomeInfo" placeholder="[nome do usuário]"><sup>*</sup>
-                        <input type="text" id="emailInfo" class="email" placeholder="email@email.com"><sup>*</sup>
-                        <input type="text" id="telInfo" placeholder="telefone">
+                        <input type="text" id="nomeInfo" class="required" placeholder="Nome do usuário">
+                        <input type="mail" id="emailInfo" class="email required" placeholder="E-mail">
+                        <input type="phone" id="telInfo" class="required" placeholder="telefone">
                         
-                        <input type="password" class="senha" placeholder="Novas senha">
-                        <input type="password" class="senha" placeholder="Confirme a nova senha">
-                        <input type="password" id="senhaInfo" class="senha" placeholder="Senha atual">
-                        <button id="atualizaInfo"><span>Atualizar informações</span></button>
+                        <input type="password" id="new-password" class="senha" placeholder="Novas senha">
+                        <input type="password" id="confirm-new-password" class="senha" placeholder="Confirme a nova senha">
+                        <input type="password" id="senhaInfo" class="senha required" placeholder="Senha atual">
+                        <button id="save-profile-data"><span>Atualizar informações</span></button>
+                        <div class="error-box">
+                            <div class="error-message erro-profile">
+                            </div>
+                        </div>
                     </div>
                     <div class="dadosE">
                         <h2>Dados para entrega:</h2>
-                        <input type="text" placeholder="CEP"><sup>*</sup>
-                        <input type="text" placeholder="Estado"><sup>*</sup>
-                        <input type="text" placeholder="Cidade"><sup>*</sup>
-                        <input type="text" placeholder="Complemento">
-                        <input type="text" class="rua" placeholder="Rua"><sup>*</sup>
-                        <button><span>Atualizar Endereço</span></button>
+                        <input type="text" class="cep required" placeholder="CEP">
+                        <input type="text" class="estate" placeholder="Estado" disabled>
+                        <input type="text" class="city" placeholder="Cidade" disabled>
+                        <input type="text" class="complement" placeholder="Complemento">
+                        <input type="text" class="required address" style="width: 50%;" class="rua" placeholder="Rua">
+                        <input type="number" class="required address-number" class="rua" placeholder="Número">
+                        <button id="save-address"><span>Atualizar Endereço</span></button>
+                        <div class="error-box">
+                            <div class="error-message erro-endereco">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,6 +215,7 @@
             
         </section>
     </main>
-    <script src="assets/scripts/empresa/perfil.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/scripts/users/profile.js" type="module"></script>
 </body>
 </html>
