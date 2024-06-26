@@ -3,7 +3,7 @@ import UsersController from "../app/controller/UsersController.js";
 
 $(function(){
     if(localStorage.getItem("isBusiness") != null){
-        window.location = "../empresa/home.html";
+        window.location = "../src/empresa/home.html";
         return;
     }
 

@@ -5,7 +5,7 @@ import { getOnlyNumbers } from "../app/lib/Utility.js";
 
 $(function(){
     if(localStorage.getItem("isBusiness") != null){
-        window.location = "../empresa/home.html";
+        window.location = "../src/empresa/home.html";
         return;
     }
 

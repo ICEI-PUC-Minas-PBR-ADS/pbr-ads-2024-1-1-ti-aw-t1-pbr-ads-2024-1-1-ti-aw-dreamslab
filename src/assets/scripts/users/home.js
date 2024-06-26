@@ -3,7 +3,7 @@ import ProductController from "../app/controller/ProductController.js";
 
 $(function(){
     if(localStorage.getItem("isBusiness") != null){
-        window.location = "../empresa/home.html";
+        window.location = "../src/empresa/home.html";
         return;
     }
 
@@ -203,7 +203,3 @@ function setCart(){
 
     $(".cart-value").html("R$" + totalValue.toFixed(2));
 }
-
-//add item on cart
-// delete iten
-// change quantity and remove if zero
