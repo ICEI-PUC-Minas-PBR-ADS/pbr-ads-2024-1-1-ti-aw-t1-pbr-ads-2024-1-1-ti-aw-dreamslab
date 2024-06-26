@@ -43,39 +43,48 @@
                         <h1>Carrinho</h1>
                         <button class="close-cart">x</button>
                     </div>
-                    <div class="cart-item">
-                        <div class="cart-item-title">
-                            <h1>Pizza 4 Queijos</h1>
-                            <h1>R$50,00</h1>
-                        </div>
-                        <div class="cart-item-actions">
-                            <h2 class="item-quantity">1x</h2>
-                            <div class="cart-actions">
-                                <button class="remove">-</button>
-                                <button class="add">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-item">
-                        <div class="cart-item-title">
-                            <h1>Pizza 4 Queijos</h1>
-                            <h1>R$50,00</h1>
-                        </div>
-                        <div class="cart-item-actions">
-                            <h2 class="item-quantity">1x</h2>
-                            <div class="cart-actions">
-                                <button class="remove">-</button>
-                                <button class="add">+</button>
-                            </div>
+                    <div class="itens-on-cart">
+                        <div class="no-item">
+                            <h2 style="width: 100%; text-align: center;">Nenhum item foi adicionado ao carrinho ainda!</h2>
                         </div>
                     </div>
                 </div>
                 <div class="sidebar-footer">
                     <div class="final-value">
                         <h1>Total:</h1>
-                        <h1 class="cart-value">R$50,50</h1>
+                        <h1 class="cart-value"></h1>
                     </div>
                     <button>Finalizar Pedido</button>
+                </div>
+            </div>
+        </section>
+        <section class="modal-content" style="display: none;">
+            <div class="product-modal" style="width: 0%; height: 0%;" data-product-id="1">
+                <button class="close-modal">X</button>
+                <div class="loading-modal" style="width: 0%; height: 0%;">
+                    <div class="custom-loader"></div>
+                </div>
+                <div class="modal-upper">
+                    <img src="" alt="" id="modal-image">
+                    <div>
+                        <h1 id="modal-title"></h1>
+                        <div>
+                            <h1 id="modal-price"></h1>
+                            <h3 id="modal-delivery"></h3>
+                            <h3 id="modal-frete"></h3>
+                        </div>
+                        <div class="modal-line"></div>
+                    </div>
+                </div>
+                <div class="modal-lower">
+                    <div class="modal-description">
+                    </div>
+                    <div class="modal-line"></div>
+                    <div class="modal-footer">
+                        <button class="add-to-cart">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
