@@ -12,18 +12,28 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-         <img src="imagens/Sem título.svg" />
-        <li><a href="">Home</a></li>
-        <li><a href="">Produtos</a></li>
-        <li><a href="">Lojas</a></li>
-        <li><a href="">Seus pedidos</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  <noscript>
+    O JavaScript é obrigatório! Por Favor Ative!
+</noscript>
+<div class="load">
+    <div class="custom-loader"></div>
+</div>
+<header>
+    <div class="main-info">
+        <a href="home.html" class="logo">
+            <img src="../assets/images/site/Logo-alone.svg" alt="logo">
+        </a>
+        <div class="links">
+            <a href="home.html" class="active-page">Home</a>
+            <a href="produtos.html">Produtos</a>
+        </div>
+    </div>
+    <div class="links-right">
+        <a href="perfil.html">
+            <img src="../assets/images/site/user-icon.png" alt="user icon">
+        </a>
+    </div>
+</header>
   <section class="container">
     <div class="container">
       <strong>Pedidos com aceitação pendente:</strong>
@@ -69,9 +79,7 @@
       </div>
     </div>
     </section>
-
-  <footer class="footer">
-  <p>&copy; 2024 Drems Lab.</p>
-  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/scripts/empresa/home.js" type="module"></script>
 </body>
 </html>
