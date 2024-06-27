@@ -3,83 +3,193 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bem vindo!</title>
   <link rel="stylesheet" href="../assets/styles/global.css">
   <link rel="stylesheet" href="../assets/styles/header.css">
   <link rel="stylesheet" href="../assets/styles/empresa/home.css">
-  <link rel="shortcut icon" href="./assets/images/site/icon.svg" type="image/svg">
+  <link rel="shortcut icon" href="../assets/images/site/icon.svg" type="image/svg">
 </head>
 
 <body>
   <noscript>
     O JavaScript é obrigatório! Por Favor Ative!
-</noscript>
-<div class="load">
+  </noscript>
+  <div class="load">
     <div class="custom-loader"></div>
-</div>
-<header>
+  </div>
+  <header>
     <div class="main-info">
-        <a href="home.html" class="logo">
-            <img src="../assets/images/site/Logo-alone.svg" alt="logo">
-        </a>
-        <div class="links">
-            <a href="home.html" class="active-page">Home</a>
-            <a href="produtos.html">Produtos</a>
-        </div>
+      <a href="home.html" class="logo">
+        <img src="../assets/images/site/Logo-alone.svg" alt="logo">
+      </a>
+      <div class="links">
+        <a href="home.html" class="active-page">Home</a>
+        <a href="produtos.html">Produtos</a>
+      </div>
     </div>
     <div class="links-right">
-        <a href="perfil.html">
-            <img src="../assets/images/site/user-icon.png" alt="user icon">
-        </a>
+      <a href="perfil.html">
+        <img src="../assets/images/site/user-icon.png" alt="user icon">
+      </a>
     </div>
-</header>
-  <section class="container">
-    <div class="container">
-      <strong>Pedidos com aceitação pendente:</strong>
-      <div class="cont">
-        <div class="card">
-            <label for="pix">Pedido #00901139</label>
-          <h4>Deseja aceitar</h4>
-          <button type="button">Sim</button>
-          <button type="button">Não</button>
-           <button type="submit">Ver detalhes</button>
+  </header>
+
+  <section class="start">
+    <div>
+      <div class="content">
+        <h1><span id="nomeUser">[Nome da Empresa]</span></h1>
+        <p>Confira os pedidos que necessitam da sua atenção</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="itens">
+    <div class="pedidos">
+      <div class="card">
+        <div class="id">
+          <p id="idPedido">#009012310139</p>
         </div>
-        <div class=" card">
-            <label for="pix">Pedido #00901139</label>
-          <h4>Deseja aceitar</h4>
-          <button type="button">Sim</button>
-          <button type="button">Não</button>
-           <button type="submit">Ver detalhes</button>
+        <div class="preco">
+          <p>R$50,99</p>
+          <p>11/04/2024</p>
         </div>
-        <div class=" card">
-            <label for="pix">Pedido #00901139</label>
-          <h4>Deseja aceitar</h4>
-          <button type="button">Sim</button>
-          <button type="button">Não</button>
-           <button type="submit">Ver detalhes</button>
+        <p>Deseja Aceitar?</p>
+        <div class="opc">
+          <div class="sim"><button>
+              <p>Sim</p>
+            </button></div>
+          <div class="nao"><button>
+              <p>Não</p>
+            </button></div>
+        </div>
+        <div class="detalhes"><button>Ver Detalhes</button></div>
+      </div>
+
+      <div class="card">
+        <div class="id">
+          <p id="idPedido">#009012310139</p>
+        </div>
+        <div class="preco">
+          <p>R$50,99</p>
+          <p>11/04/2024</p>
+        </div>
+        <p>Deseja Aceitar?</p>
+        <div class="opc">
+          <div class="sim"><button>
+              <p>Sim</p>
+            </button></div>
+          <div class="nao"><button>
+              <p>Não</p>
+            </button></div>
+        </div>
+        <div class="detalhes"><button>Ver Detalhes</button></div>
+      </div>
+
+      <div class="card">
+        <div class="id">
+          <p id="idPedido">#009012310139</p>
+        </div>
+        <div class="preco">
+          <p>R$50,99</p>
+          <p>11/04/2024</p>
+        </div>
+        <p>Deseja Aceitar?</p>
+        <div class="opc">
+          <div class="sim"><button>
+              <p>Sim</p>
+            </button></div>
+          <div class="nao"><button>
+              <p>Não</p>
+            </button></div>
+        </div>
+        <div class="detalhes"><button>Ver Detalhes</button></div>
+      </div>
+
+      <div class="card">
+        <div class="id">
+          <p id="idPedido">#009012310139</p>
+        </div>
+        <div class="preco">
+          <p>R$50,99</p>
+          <p>11/04/2024</p>
+        </div>
+        <p>Deseja Aceitar?</p>
+        <div class="opc">
+          <div class="sim"><button>
+              <p>Sim</p>
+            </button></div>
+          <div class="nao"><button>
+              <p>Não</p>
+            </button></div>
+        </div>
+        <div class="detalhes"><button>Ver Detalhes</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="down">
+    <div class="Produtos">
+      <h1>Confira seus produtos <span>mais populares</span></h1>
+      <div class="content-down">
+
+        <div class="card-down">
+          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
+          <div class="card-content">
+            <div class="tempo-frete">
+              <p>20min - 30min</p>
+              <p class="aberto">R$2,99</p>
+            </div>
+            <p class="nomeProduto">Pizza 4 Queijos</p>
+            <p class="precoProduto">R$50,99</p>
+            <p class="padaria">Padaria Do Bairro</p>
+          </div>
+        </div>
+
+        <div class="card-down">
+          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
+          <div class="card-content">
+            <div class="tempo-frete">
+              <p>05min - 10min</p>
+              <p class="free">Grátis</p>
+            </div>
+            <p class="nomeProduto">Pão Francês</p>
+            <p class="precoProduto">R$5,99</p>
+            <p class="padaria">Padaria Do Bairro</p>
+          </div>
+        </div>
+
+        <div class="card-down">
+          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
+          <div class="card-content">
+            <div class="tempo-frete">
+              <p>50min - 01h</p>
+              <p class="free">Grátis</p>
+            </div>
+            <p class="nomeProduto">Bolo de Chocolate</p>
+            <p class="precoProduto">R$35,99</p>
+            <p class="padaria">Padaria Do Bairro</p>
+          </div>
+        </div>
+
+        <div class="card-down">
+          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
+          <div class="card-content">
+            <div class="tempo-frete">
+              <p>10min - 30min</p>
+              <p class="free">Grátis</p>
+            </div>
+            <p class="nomeProduto">Salgado</p>
+            <p class="precoProduto">R$6,99</p>
+            <p class="padaria">Padaria Do Bairro</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <strong>Últimos pedidos:</strong>
-      <div class="cont">
-        <div class="card">
-          <label for="credit-card"">Pedido #00901139</label>
-          <button type="submit">Ver detalhes</button>
-        </div>
-        <div class=" card">
-            <label for="pix">Pedido #00901139</label>
-          <button type="submit">Ver detalhes</button>
-        </div>
-        <div class=" card">
-            <label for="cash">Pedido #00901139</label>
-           <button type="submit">Ver detalhes</button>
-        </div>
-      </div>
-    </div>
-    </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../assets/scripts/empresa/home.js" type="module"></script>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../assets/scripts/empresa/home.js" type="module"></script>
 </body>
+
 </html>
