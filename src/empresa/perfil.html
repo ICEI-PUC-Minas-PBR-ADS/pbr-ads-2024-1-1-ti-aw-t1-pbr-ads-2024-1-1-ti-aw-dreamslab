@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="shortcut icon" href="../assets/images/site/icon.svg" type="image/svg">
+    <link rel="stylesheet" href="../assets/styles/header.css">
+    <link rel="stylesheet" href="../assets/styles/empresa/perfil.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+</head>
+
+<body>
+    <noscript>
+        O JavaScript é obrigatório! Por Favor Ative!
+    </noscript>
+    <header>
+        <div class="main-info">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/site/Logo-alone.svg" alt="logo">
+            </a>
+            <div class="links">
+                <a href="home.html">Home</a>
+                <a href="produtos.html">Produtos</a>
+            </div>
+        </div>
+        <div class="links-right">
+            <a href="perfil.html">
+                <img src="../assets/images/site/user-icon.png" alt="user icon">
+            </a>
+            <a class="cart-icon">
+                <img src="../assets/images/site/cart-icon.png" alt="cart icon">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        </section>
+        <section class="start">
+            <div class="top">
+                <div class="content">
+                    <h1>Olá, <span id="nomeUser">[nome da empresa]</span></h1>
+                    <img src="../assets/images/site/icone350x350.png" alt="">
+                    <br>
+                    <button class="botao" type="file" id="btnFoto"><span>Trocar de foto</span></button>
+                    <!-- <input type="file" accept="image" id="SeleçaoImagem" /> -->
+                </div>
+                <div class="dados">
+                    <div class="dadosP">
+                        <h2>Dados do Proprietário:</h2>
+                        <input type="text" id="nomeInfo" class="required" placeholder="Nome do Proprietário">
+                        <input type="mail" id="emailInfo" class="email required" placeholder="E-mail">
+                        <input type="phone" id="telInfo" class="required" placeholder="telefone">
+
+                        <input type="password" id="new-password" class="senha" placeholder="Novas senha">
+                        <input type="password" id="confirm-new-password" class="senha"
+                            placeholder="Confirme a nova senha">
+                        <input type="password" id="senhaInfo" class="senha required" placeholder="Senha atual">
+                        <input type="cpf" id="emailInfo" class="email required" placeholder="CPF">
+                        <button id="save-profile-data"><span>Atualizar informações</span></button>
+                        <div class="error-box">
+                            <div class="error-message erro-profile">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dadosE">
+                        <h2>Dados da Empresa:</h2>
+                        <input type="text" id="nomeInfo" class="required" placeholder="Nome da Empresa">
+                        <input type="cnpj" id="emailInfo" class="email required" placeholder="CNPJ">
+                        <input type="phone" id="telInfo" class="required" placeholder="telefone">
+                        <input type="mail" id="emailInfo" class="email required" placeholder="E-MAIL">                     
+                        <button id="save-profile-data"><span>Atualizar informações</span></button>
+                        <div class="error-box">
+                            <div class="error-message erro-profile">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dadosE">
+                        <h2>Localização da Empresa:</h2>
+                        <input type="text" class="cep required" placeholder="CEP">
+                        <input type="text" class="estate" placeholder="Estado" disabled>
+                        <input type="text" class="city" placeholder="Cidade" disabled>
+                        <input type="text" placeholder="Logradouro">
+                        <input type="text" class="required address" style="width: 50%;" class="rua" placeholder="Rua">
+                        <input type="number" class="required address-number" class="rua" placeholder="Número">
+                        <button id="save-address"><span>Atualizar Endereço</span></button>
+                        <div class="error-box">
+                            <div class="error-message erro-endereco">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </main>
+</body>
+
+</html>
