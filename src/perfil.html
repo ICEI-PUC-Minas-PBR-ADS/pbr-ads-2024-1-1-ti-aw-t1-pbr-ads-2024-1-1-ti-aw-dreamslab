@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="assets/styles/perfil.css">
     <link rel="stylesheet" href="assets/styles/global.css">
 </head>
-
 <body>
     <div class="load">
         <div class="custom-loader"></div>
@@ -40,9 +38,9 @@
 
     <main>
         <section class="cart-content closed" style="display: none;">
-            <div class="sidebar" style="right: -400px;">
+            <div class="sidebar" style="right: -400px;">   
                 <div class="sidebar-content">
-                    <div class="sidebar-title">
+                    <div class="sidebar-title">  
                         <h1>Carrinho</h1>
                         <button class="close-cart">x</button>
                     </div>
@@ -97,10 +95,9 @@
                         <input type="text" id="nomeInfo" class="required" placeholder="Nome do usuário">
                         <input type="mail" id="emailInfo" class="email required" placeholder="E-mail">
                         <input type="phone" id="telInfo" class="required" placeholder="telefone">
-
+                        
                         <input type="password" id="new-password" class="senha" placeholder="Novas senha">
-                        <input type="password" id="confirm-new-password" class="senha"
-                            placeholder="Confirme a nova senha">
+                        <input type="password" id="confirm-new-password" class="senha" placeholder="Confirme a nova senha">
                         <input type="password" id="senhaInfo" class="senha required" placeholder="Senha atual">
                         <button id="save-profile-data"><span>Atualizar informações</span></button>
                         <div class="error-box">
@@ -125,9 +122,15 @@
                 </div>
             </div>
             <section class="itens-top">
-                <h1 class="title">Confira seus últimos pedidos:</h1>
-            </section>
-            <div class="itens">
+                <div>
+                    <h1 class="title">Confira seus últimos pedidos:</h1>
+                    <div class="search">
+                        <input type="text" placeholder="Procure por loja, status ou data...">
+                        <button><span>Buscar</span></button>
+                    </div>
+                </section>
+                </div>
+                <div class="itens">
                 <div class="popular-orders">
                     <div class="card">
                         <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
@@ -139,7 +142,7 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-
+                            
                             <div class="status">
                                 <p>Status:</p>
                                 <p class="aberto">Aberto</p>
@@ -158,7 +161,7 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-
+                            
                             <div class="status">
                                 <p>Status:</p>
                                 <p class="finalizado">Finalizado</p>
@@ -177,7 +180,7 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-
+                            
                             <div class="status">
                                 <p>Status:</p>
                                 <p class="cancelado">Cancelado</p>
@@ -196,7 +199,7 @@
                                 <p class="preco">R$50,99</p>
                                 <p class="data">11/04/2024</p>
                             </div>
-
+                            
                             <div class="status">
                                 <p>Status:</p>
                                 <p class="aceito">Aceito</p>
@@ -205,15 +208,14 @@
                             <p id="idPedido">#009012310139</p>
                         </div>
                     </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
-
+            
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/scripts/users/profile.js" type="module"></script>
 </body>
-
 </html>
