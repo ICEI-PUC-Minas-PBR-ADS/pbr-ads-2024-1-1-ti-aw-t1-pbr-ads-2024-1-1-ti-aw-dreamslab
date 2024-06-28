@@ -1,5 +1,4 @@
 import sweetalert2 from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/+esm';
-import UsersController from "../app/controller/UsersController.js";
 import OrderController from "../app/controller/OrderController.js";
 
 $(function(){
@@ -72,14 +71,12 @@ $("#confirm-order").on("click", function(){
         return showModal("Selecione uma forma de entrega!", "error");
     }
 
-    console.log();
     const cartData = JSON.parse(localStorage.getItem("cart"));
     let totalValue = 0;
     cartData.forEach(function(item){
-        totalValue += item.price;
-    })
+        totalValue += Number(item.price);
+    });
     
-    console.log(selectedPayment);
     const orderData = {
         "id" : "",
         "time": new Date().toLocaleTimeString(),
@@ -111,13 +108,3 @@ function showModal(message, icon){
         confirmButtonText: "Ok"
     });
 }
-// new sweetalert2({
-//     text: text,
-//     icon: icon,
-//     confirmButtonText: "Ok",
-//     closeOnConfirm: true,
-// }).then(function(){
-//     if(status == true){
-//         window.location.reload();
-//     }
-// })

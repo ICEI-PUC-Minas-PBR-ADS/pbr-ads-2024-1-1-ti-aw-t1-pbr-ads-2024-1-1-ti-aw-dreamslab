@@ -32,53 +32,57 @@
             <a href="perfil.html">
                 <img src="./assets/images/site/user-icon.png" alt="user icon">
             </a>
-            <a class="cart-icon">
-                <img src="./assets/images/site/cart-icon.png" alt="cart icon">
-            </a>
         </div>
     </header>
 
     <main>
-        <section class="cart-content closed" style="display: none;">
-            <div class="sidebar" style="right: -400px;">
-                <div class="sidebar-content">
-                    <div class="sidebar-title">
-                        <h1>Carrinho</h1>
-                        <button class="close-cart">x</button>
+        <section class="modal-content" style="display: none;">
+            <div class="product-modal modal-order" style="width: 0%; height: 0%;">
+                <button class="close-modal">X</button>
+                <div class="loading-modal" style="width: 0%; height: 0%;">
+                    <div class="custom-loader"></div>
+                </div>
+                <h1 class="title">Detalhes do Pedido: <span class="id-order">#1</span></h1>
+                <div class="line"></div>
+                <h2>Produtos:</h2>
+                <div class="itens">
+                    <div class="item">
+                        <div>
+                            <p>produto 1</p>
+                            <p>R$45</p>
+                        </div>
+                        <h2>3x</h2>
                     </div>
-                    <div class="cart-item">
-                        <div class="cart-item-title">
-                            <h1>Pizza 4 Queijos</h1>
-                            <h1>R$50,00</h1>
+                    <div class="item">
+                        <div>
+                            <p>produto 1</p>
+                            <p>R$45</p>
                         </div>
-                        <div class="cart-item-actions">
-                            <h2 class="item-quantity">1x</h2>
-                            <div class="cart-actions">
-                                <button class="remove">-</button>
-                                <button class="add">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-item">
-                        <div class="cart-item-title">
-                            <h1>Pizza 4 Queijos</h1>
-                            <h1>R$50,00</h1>
-                        </div>
-                        <div class="cart-item-actions">
-                            <h2 class="item-quantity">1x</h2>
-                            <div class="cart-actions">
-                                <button class="remove">-</button>
-                                <button class="add">+</button>
-                            </div>
-                        </div>
+                        <h2>3x</h2>
                     </div>
                 </div>
-                <div class="sidebar-footer">
-                    <div class="final-value">
-                        <h1>Total:</h1>
-                        <h1 class="cart-value">R$50,50</h1>
+                <div class="final-value">
+                    <h1>Total:</h1>
+                    <h1 class="total">R$100</h1>
+                </div>
+                <div class="order-info">
+                    <div class="line"></div>
+                    <h1 class="info">Informações do pedido:</h1>
+                    <div class="two-info">
+                        <h3>Data do pedido: <span class="date">17/10/2005</span></h3>
+                        <h3>Hora: <span class="time">14:10:30</span></h3>
                     </div>
-                    <button>Finalizar Pedido</button>
+                    <div class="two-info">
+                        <h3>Tipo de pagamento: <span class="payment-type">PIX</span></h3>
+                        <h3>Forma de entrega: <span class="delivery-type">Delivery</span></h3>
+                    </div>
+                    <div class="two-info">
+                        <h3>Status: <span class="order-status">Aceito</span></h3>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="confirm-order">Confirmar Entrega</button>
+                    <button class="cancel-order">Cancelar Pedido</button>
                 </div>
             </div>
         </section>
@@ -129,7 +133,11 @@
             </section>
             <div class="itens">
                 <div class="popular-orders">
-                    <div class="card">
+                    <div class="no-order">
+                        <h1>Nenhum pedido foi encontrado! :( </h1>
+                    </div>
+                    
+                    <!-- <div class="card">
                         <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
                         <div class="card-content">
                             <div class="NomeP">
@@ -147,64 +155,7 @@
                             <br>
                             <p id="idPedido">#009012310139</p>
                         </div>
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-                        <div class="card-content">
-                            <div class="NomeP">
-                                Padaria Dois Irmãos
-                            </div>
-                            <div class="info">
-                                <p class="preco">R$50,99</p>
-                                <p class="data">11/04/2024</p>
-                            </div>
-
-                            <div class="status">
-                                <p>Status:</p>
-                                <p class="finalizado">Finalizado</p>
-                            </div>
-                            <br>
-                            <p id="idPedido">#009012310139</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-                        <div class="card-content">
-                            <div class="NomeP">
-                                Padaria Dois Irmãos
-                            </div>
-                            <div class="info">
-                                <p class="preco">R$50,99</p>
-                                <p class="data">11/04/2024</p>
-                            </div>
-
-                            <div class="status">
-                                <p>Status:</p>
-                                <p class="cancelado">Cancelado</p>
-                            </div>
-                            <br>
-                            <p id="idPedido">#009012310139</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-                        <div class="card-content">
-                            <div class="NomeP">
-                                Padaria Dois Irmãos
-                            </div>
-                            <div class="info">
-                                <p class="preco">R$50,99</p>
-                                <p class="data">11/04/2024</p>
-                            </div>
-
-                            <div class="status">
-                                <p>Status:</p>
-                                <p class="aceito">Aceito</p>
-                            </div>
-                            <br>
-                            <p id="idPedido">#009012310139</p>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             </div>

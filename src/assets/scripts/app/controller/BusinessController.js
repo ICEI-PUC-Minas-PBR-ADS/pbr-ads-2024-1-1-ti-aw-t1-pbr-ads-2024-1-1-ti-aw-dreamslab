@@ -17,6 +17,11 @@ class BusinessController{
         const businessData = await this.#businessModel.getByField('business', 'owner_id', ownerId);
         return businessData;
     }
+
+    async getBusinessById(businessId){
+        const businessData = await this.#businessModel.getByField('business', 'id', businessId);
+        return businessData;
+    }
 }
 
 export default BusinessController;

@@ -26,16 +26,69 @@
       <div class="links">
         <a href="home.html" class="active-page">Home</a>
         <a href="produtos.html">Produtos</a>
-        <a href="pedidos.html">Pedidos</a>
       </div>
     </div>
     <div class="links-right">
-      <a href="perfil.html">
-        <img src="../assets/images/site/user-icon.png" alt="user icon">
-      </a>
     </div>
   </header>
-
+  <section class="modal-content" style="display: none;">
+    <div class="product-modal modal-order" style="width: 0%; height: 0%;">
+        <button class="close-modal">X</button>
+        <div class="loading-modal" style="width: 0%; height: 0%;">
+            <div class="custom-loader"></div>
+        </div>
+        <h1 class="title">Detalhes do Pedido: <span class="id-order">#1</span></h1>
+        <div class="line"></div>
+        <h2>Produtos:</h2>
+        <div class="itens">
+            <div class="item">
+                <div>
+                    <p>produto 1</p>
+                    <p>R$45</p>
+                </div>
+                <h2>3x</h2>
+            </div>
+            <div class="item">
+                <div>
+                    <p>produto 1</p>
+                    <p>R$45</p>
+                </div>
+                <h2>3x</h2>
+            </div>
+        </div>
+        <div class="final-value">
+            <h1>Total:</h1>
+            <h1 class="total">R$100</h1>
+        </div>
+        <div class="order-info">
+            <div class="line"></div>
+            <h1 class="info">Informações do pedido:</h1>
+            <div class="two-info">
+                <h3>Data do pedido: <span class="date">17/10/2005</span></h3>
+                <h3>Hora: <span class="time">14:10:30</span></h3>
+            </div>
+            <div class="two-info">
+                <h3>Tipo de pagamento: <span class="payment-type">PIX</span></h3>
+                <h3>Forma de entrega: <span class="delivery-type">Delivery</span></h3>
+            </div>
+            <div class="two-info">
+                <h3>Status: <span class="order-status">Aceito</span></h3>
+            </div>
+        </div>
+        <div class="status-section" style="display: none;">
+          <h1>Atualize o status:</h1>
+          <select id="new-status">
+              <option>Selecione</option>
+              <option value="0" class="canceled">Cancelado</option>
+              <option value="3" class="in_prepare">Em preparo</option>
+              <option value="4" class="in_delivery">Em entrega</option>
+              <option value="4.5" class="ready_to_take">Pronto para buscar</option>
+              <option value="5" class="finished">Concluído</option>
+          </select>
+          <button class="save-status">Salvar novo status</button>
+        </div>
+    </div>
+</section>
   <section class="start">
     <div>
       <div class="content">
@@ -45,146 +98,17 @@
     </div>
   </section>
 
-  <div class="itens">
+  <div class="pending-itens">
     <div class="pedidos">
-      <div class="card">
-        <div class="id">
-          <p id="idPedido">#009012310139</p>
-        </div>
-        <div class="preco">
-          <p>R$50,99</p>
-          <p>11/04/2024</p>
-        </div>
-        <p>Deseja Aceitar?</p>
-        <div class="opc">
-          <div class="sim"><button>
-              <p>Sim</p>
-            </button></div>
-          <div class="nao"><button>
-              <p>Não</p>
-            </button></div>
-        </div>
-        <div class="detalhes"><button>Ver Detalhes</button></div>
-      </div>
-
-      <div class="card">
-        <div class="id">
-          <p id="idPedido">#009012310139</p>
-        </div>
-        <div class="preco">
-          <p>R$50,99</p>
-          <p>11/04/2024</p>
-        </div>
-        <p>Deseja Aceitar?</p>
-        <div class="opc">
-          <div class="sim"><button>
-              <p>Sim</p>
-            </button></div>
-          <div class="nao"><button>
-              <p>Não</p>
-            </button></div>
-        </div>
-        <div class="detalhes"><button>Ver Detalhes</button></div>
-      </div>
-
-      <div class="card">
-        <div class="id">
-          <p id="idPedido">#009012310139</p>
-        </div>
-        <div class="preco">
-          <p>R$50,99</p>
-          <p>11/04/2024</p>
-        </div>
-        <p>Deseja Aceitar?</p>
-        <div class="opc">
-          <div class="sim"><button>
-              <p>Sim</p>
-            </button></div>
-          <div class="nao"><button>
-              <p>Não</p>
-            </button></div>
-        </div>
-        <div class="detalhes"><button>Ver Detalhes</button></div>
-      </div>
-
-      <div class="card">
-        <div class="id">
-          <p id="idPedido">#009012310139</p>
-        </div>
-        <div class="preco">
-          <p>R$50,99</p>
-          <p>11/04/2024</p>
-        </div>
-        <p>Deseja Aceitar?</p>
-        <div class="opc">
-          <div class="sim"><button>
-              <p>Sim</p>
-            </button></div>
-          <div class="nao"><button>
-              <p>Não</p>
-            </button></div>
-        </div>
-        <div class="detalhes"><button>Ver Detalhes</button></div>
-      </div>
+      <div class="nothing"><h1>Nenhum pedido pendente!</h1></div>
     </div>
   </div>
 
   <div class="down">
     <div class="Produtos">
-      <h1>Confira seus produtos <span>mais populares</span></h1>
+      <h1>Confira seus seus <span>ultimos pedidos</span></h1>
       <div class="content-down">
-
-        <div class="card-down">
-          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-          <div class="card-content">
-            <div class="tempo-frete">
-              <p>20min - 30min</p>
-              <p class="aberto">R$2,99</p>
-            </div>
-            <p class="nomeProduto">Pizza 4 Queijos</p>
-            <p class="precoProduto">R$50,99</p>
-            <p class="padaria">Padaria Do Bairro</p>
-          </div>
-        </div>
-
-        <div class="card-down">
-          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-          <div class="card-content">
-            <div class="tempo-frete">
-              <p>05min - 10min</p>
-              <p class="free">Grátis</p>
-            </div>
-            <p class="nomeProduto">Pão Francês</p>
-            <p class="precoProduto">R$5,99</p>
-            <p class="padaria">Padaria Do Bairro</p>
-          </div>
-        </div>
-
-        <div class="card-down">
-          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-          <div class="card-content">
-            <div class="tempo-frete">
-              <p>50min - 01h</p>
-              <p class="free">Grátis</p>
-            </div>
-            <p class="nomeProduto">Bolo de Chocolate</p>
-            <p class="precoProduto">R$35,99</p>
-            <p class="padaria">Padaria Do Bairro</p>
-          </div>
-        </div>
-
-        <div class="card-down">
-          <img src="../assets/images/site/bolo.svg" alt="product" style="width: 100%;">
-          <div class="card-content">
-            <div class="tempo-frete">
-              <p>10min - 30min</p>
-              <p class="free">Grátis</p>
-            </div>
-            <p class="nomeProduto">Salgado</p>
-            <p class="precoProduto">R$6,99</p>
-            <p class="padaria">Padaria Do Bairro</p>
-          </div>
-        </div>
+        <div class="nothing"><h1>Nenhum pedido recebido!</h1></div>
       </div>
     </div>
   </div>

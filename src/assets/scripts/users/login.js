@@ -31,9 +31,10 @@ $("#login-button").on("click", function(){
         }
         console.log(result);
         if(result.hasBusiness == true){
+            console.log(result);
             localStorage.setItem("userId", result.userId);
             localStorage.setItem("isBusiness", true);
-            window.location = "../empresa/home.html";
+            // window.location = "../empresa/home.html";
         }
 
         localStorage.setItem("userId", result.userId);

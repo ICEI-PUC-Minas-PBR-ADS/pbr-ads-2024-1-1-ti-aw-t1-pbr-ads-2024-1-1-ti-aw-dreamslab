@@ -140,9 +140,8 @@ main {
         max-width: 100%;
         justify-content: space-between;
         margin: 80px;
-        padding: 10px;
+        padding: 20px 50px;
         margin: 0px;
-        padding: 70px;
         border-radius: 20px 20px 0px 0px;
         border-top: solid rgba(63, 62, 62, 0.11);
     }
@@ -188,12 +187,19 @@ main {
     }
     
     .itens {
-        display: flex;
-        justify-content: center;
+        padding-bottom: 30px;
+        width: 100%;
     }
     
     .popular-orders {
         display: flex;
+        padding-bottom: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
     }
     
     .card {  
@@ -201,6 +207,12 @@ main {
         padding: 10px;
         margin: 0px 40px;
         border-radius: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .card:hover{
+        border: solid rgba(22, 22, 22, 0.11);
     }
     
     

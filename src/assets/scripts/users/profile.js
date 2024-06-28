@@ -1,7 +1,10 @@
+import { getOnlyNumbers, getStatusTextByNumber, getPaymentTypeText, getDeliveryTypeText } from "../app/lib/Utility.js";
+import sweetalert2 from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/+esm';
+import BusinessController from "../app/controller/BusinessController.js";
 import AddressController from "../app/controller/AddressController.js";
 import UsersController from "../app/controller/UsersController.js";
+import OrderController from "../app/controller/OrderController.js";
 import FormValidator from "../app/lib/form/FormValidator.js"; 
-import { getOnlyNumbers } from "../app/lib/Utility.js";
 
 $(function(){
     if(localStorage.getItem("isBusiness") != null){
@@ -20,6 +23,7 @@ $(function(){
         location.reload();
     })
     setUserData();
+    setOrders();
 })
 
 let hasAddress = false;
@@ -28,7 +32,6 @@ function setUserData(){
     new UsersController().getUserById().then((result)=>{
         $("#nomeUser").html(result.name + "!")
         fillInputsUser(result);
-        $(".load").remove();
     });
 
     new AddressController().getUserAddress().then((address)=>{
@@ -39,6 +42,200 @@ function setUserData(){
         fillAddressInputs(address);
     });
 }
+
+let orders = []
+function setOrders(){
+    new OrderController().getOrdersByUserId().then(function(result){
+        orders = result;
+        if(result.length == 0){
+            $(".load").remove();    
+            return;
+        }
+
+        $(".popular-orders").html("");
+
+        result.forEach(async function(order){
+            await new BusinessController().getBusinessById(Number(order.store_id)).then(function(result){ 
+                const status = getStatusTextByNumber(order.status);
+                $(".popular-orders").append(
+                    `<div class="card" data-order-id="${order.id}">
+                        <img src="./assets/images/site/bolo.svg" alt="product" style="width: 100%;">
+                            <div class="card-content">
+                                    <div class="NomeP">
+                                        ${result.business_name}
+                                    </div>
+                                    <div class="info">
+                                        <p class="preco">R$${order.totalValue}</p>
+                                        <p class="data">${order.date}</p>
+                                    </div>
+        
+                                    <div class="status">
+                                        <p>Status:</p>
+                                        <p class="${status.class}">${status.status}</p>
+                                    </div>
+                                    <br>
+                                    <p id="idPedido">#${order.id}</p>
+                                </div>
+                            </div>`
+                );
+                $(".load").remove();
+            });
+        });
+    });
+}
+
+$("body").on("click", ".card", function(){
+    $(".modal-content").css("display", "flex");
+    $(".close-modal").css("display", "none");
+    const orderId = $(this).data("order-id");
+
+    $(".loading-modal").animate({
+        height: "+=97.5%",
+        width: "+=98.7%",
+    }, 200);
+
+    $(".product-modal").animate({
+        height: "+=70%",
+        width: "+=50%",
+    }, 200, function(){
+        $(".close-modal").css("display", "block");
+        setModalData(orderId);   
+    });
+});
+
+function setModalData(orderId){
+    $(".modal-error").hide();
+    const orderData = orders.find(order => order.id == orderId);
+    
+    $("#id-order").html(orderData.id);
+    const orderItens = JSON.parse(orderData.itens);
+    $(".items").html("");
+    orderItens.forEach(function(item){
+        $(".items").append(
+            `<div class="item">
+            <div>
+            <p>${item.name}</p>
+            <p>R$${item.price}</p>
+            </div>
+            <h2>${item.qntity}x</h2>
+            </div>`
+        )
+    });
+    $(".total").html("R$" + orderData.totalValue);
+    $(".date").html(orderData.data);
+    $(".time").html(orderData.time);
+    $(".delivery-type").html(getDeliveryTypeText(orderData.delivery_type));
+    $(".payment-type").html(getPaymentTypeText(orderData.payment_type));
+    $(".order-status").html(getStatusTextByNumber(orderData.status).status);
+    $(".order-status").addClass(getStatusTextByNumber(orderData.status).class);
+    $(".confirm-order").data("order-id", orderData.id);
+    if(orderData.status == 0 || orderData.status == 5){
+        $(".confirm-order").hide();
+        $(".cancel-order").hide();
+    }
+    else{
+        $(".confirm-order").show();
+    }
+    if(orderData.status > 2){
+        $(".cancel-order").hide();
+    }else{
+        $(".cancel-order").show();
+    }
+    $(".cancel-order").data("order-id", orderData.id);
+    $(".loading-modal").css("display", "none");
+}
+
+$(".close-modal").on("click", function(){
+    $(".close-modal").css("display", "none");
+    $(".product-modal").animate({
+        height: "-=70%",
+        width: "-=50%",
+    }, 200, ()=>{
+        $(".modal-content").css("display", "none");
+    });
+    $(".loading-modal").animate({
+        height: "-=97.5%",
+        width: "-=98.7%",
+    }, 200, function(){
+        $(".loading-modal").css("display", "flex");
+        $(".order-status").removeClass().addClass("order-status");
+        $(".modal-error").show();
+    });
+});
+
+$("body").on("click", ".confirm-order", function(){
+    const orderId = Number($(this).data("order-id"));
+    new sweetalert2({
+        text: "Deseja confirmar o recebimento do pedido?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Sim",
+        denyButtonText: `Não`,
+        showLoaderOnConfirm: true,
+    }).then((result) => {
+        if (result.isDenied) {
+            return;
+        }
+
+        new OrderController().confirmDelivery(orderId).then(function(result){
+            if(result == false){
+                new sweetalert2({
+                    text: "Erro ao confirmar pedido!",
+                    icon: "error",
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                });
+                return;
+            }
+
+            new sweetalert2({
+                text: "Pedido concluido!",
+                icon: "success",
+                showCancelButton: false,
+                confirmButtonText: "Ok",
+            }).then(function(){
+                location.reload();
+            });
+        })
+    });
+});
+
+$("body").on("click", ".cancel-order", function(){
+    const orderId = Number($(this).data("order-id"));
+    new sweetalert2({
+        text: "Deseja cancelar o recebimento do pedido?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Sim",
+        denyButtonText: `Não`,
+        showLoaderOnConfirm: true,
+    }).then((result) => {
+        if (result.isDenied) {
+            return;
+        }
+
+        new OrderController().cancelDelivery(orderId).then(function(result){
+            if(result == false){
+                new sweetalert2({
+                    text: "Erro ao cancelar pedido!",
+                    icon: "error",
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                });
+                return;
+            }
+
+            new sweetalert2({
+                text: "Pedido cancelado!",
+                icon: "success",
+                showCancelButton: false,
+                confirmButtonText: "Ok",
+            }).then(function(){
+                location.reload();
+            });
+        })
+    });
+})
 
 let cepIsValid = false;
 $("#save-address").on("click", function(){
@@ -157,7 +354,6 @@ function resetPassInputs(){
     $("#senhaInfo").val("");
 }
         
-
 $(".cep").on("change", function(){    
     let inputValue = getOnlyNumbers($(".cep").val());
     $(".cep").val(inputValue);
@@ -214,18 +410,3 @@ function fillAddressInputs(address){
     $(".address-number").val(address.number);
     hasAddress = true;
 }
-
-$(".cart-icon").on("click", function(){
-    $(".cart-content").css("display", "flex");
-    $(".sidebar").animate({
-        right: "+=400"
-    }, 200);   
-})
-
-$(".close-cart").on("click", function(){
-    $(".sidebar").animate({
-        right: "-=400"
-    }, 200, ()=>{
-        $(".cart-content").css("display", "none");
-    });
-});
