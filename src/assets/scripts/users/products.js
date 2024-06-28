@@ -23,7 +23,40 @@ $(function(){
 })
 
 function setProductsData(){
-    $(".load").remove();
+    new ProductController().getAllProducts().then((result)=>{
+        $(".popular-orders").html("");
+        result.forEach(function(product){
+            $(".popular-orders").append(`
+                <div class="card" data-product-id=${product.data.id}>
+                    <img src="${product.data.img_path}" alt="product" style="width: 100%;">
+                    <div class="card-content">
+                        <h1 class="name">${product.data.name}</h1>
+                        <h2 class="price">R$${product.data.price}</h2>
+                    </div>
+                </div>
+                `);
+        })
+
+        $(".card").on("click", function(){
+            const itemId = $(this).data("product-id");
+            $(".modal-content").css("display", "flex");
+            $(".close-modal").css("display", "none");
+        
+            $(".loading-modal").animate({
+                height: "+=68%",
+                width: "+=49%",
+            }, 200);
+        
+            $(".product-modal").animate({
+                height: "+=70%",
+                width: "+=50%",
+            }, 200, function(){
+                $(".close-modal").css("display", "block");
+                setModalData(itemId);   
+            });
+        });
+        $(".load").remove();
+    });
 }
 
 $(".cart-icon").on("click", function(){
@@ -41,22 +74,19 @@ $(".close-cart").on("click", function(){
     });
 });
 
-
-$(".card").on("click", function(){
-    $(".modal-content").css("display", "flex");
+$(".close-modal").on("click", function(){
     $(".close-modal").css("display", "none");
-
-    $(".loading-modal").animate({
-        height: "+=68%",
-        width: "+=49%",
-    }, 200);
-
     $(".product-modal").animate({
-        height: "+=70%",
-        width: "+=50%",
+        height: "-=70%",
+        width: "-=50%",
+    }, 200, ()=>{
+        $(".modal-content").css("display", "none");
+    });
+    $(".loading-modal").animate({
+        height: "-=68%",
+        width: "-=49%",
     }, 200, function(){
-        $(".close-modal").css("display", "block");
-        setModalData($(this).data("product-id"))   
+        $(".loading-modal").css("display", "flex");
     });
 });
 
@@ -83,12 +113,11 @@ function setModalData(productId){
             $(".loading-modal").append("<div class='modal-error'><br/><h1>Erro ao carregar dados do produto!</h1></div>");
             return;
         }
-        const product = result.product;
+        const product = result;
         $("#modal-image").attr("src", product.img_path);
         $("#modal-title").html(product.name);
-        $("#modal-price").html("R$" + product.price);
+        $("#modal-price").html("R$" + product.price),
         $("#modal-delivery").html(product.delivery_time),
-        $("#modal-frete").html("R$" + product.delivery_tax);
         $(".modal-description").html(product.description);
         $(".loading-modal").css("display", "none");
 
@@ -99,6 +128,7 @@ function setModalData(productId){
     });
 }
 
+
 function addProductOnCart(product){
     const cartItens = JSON.parse(localStorage.getItem("cart"));
 
@@ -107,9 +137,17 @@ function addProductOnCart(product){
         positionToAdd = cartItens.length;   
     }
 
-    const cartItem = cartItens.find(item => item.item_id === product.id);
-    if(cartItem){
-        cartItem.qntity++;
+    let itemExists;
+    let indexToAdd = 0; 
+    cartItens.forEach(function(eachItem, index){
+        if(eachItem.item_id == product.id){
+            itemExists = true;
+            indexToAdd = index;
+        }
+    })
+
+    if(itemExists == true){
+        cartItens[indexToAdd].qntity += 1;
         localStorage.setItem("cart", JSON.stringify(cartItens));
         $(".add-to-cart").html("Produto Adicionado ao carrinho!");
         setTimeout(function(){
@@ -122,6 +160,7 @@ function addProductOnCart(product){
         item_id: product.id,
         name: product.name,
         price: product.price,
+        store_id: product.store_id,
         qntity: 1,
     }
 

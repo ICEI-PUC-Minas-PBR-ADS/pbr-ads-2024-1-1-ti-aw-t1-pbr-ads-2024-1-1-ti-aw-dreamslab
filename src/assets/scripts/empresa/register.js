@@ -77,7 +77,7 @@ $("#register-button").on("click", function(){
 
             const businessId = businessResponse.businessId;
             localStorage.setItem("userId", userId);
-            localStorage.setItem("businessId", businessId);
+            localStorage.setItem("isBusiness", true);
             window.location = "home.html"
         });
 

@@ -145,6 +145,9 @@ noscript{
 
         & .sidebar-footer{
             height: 11%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             & .final-value{
                 width: 100%;
@@ -160,11 +163,13 @@ noscript{
                 }
             }
 
-            & button{
+            & a{
+                text-align: center;
                 width: 100%;
-                height: 50px;
+
                 font-size: 26px;
                 border-radius: 40px;
+                text-decoration: none;
                 background-color: #743DD2;
                 color: white;
                 border: none;
@@ -172,7 +177,7 @@ noscript{
                 cursor: pointer;
             }
 
-            & button:hover{
+            & a:hover{
                 background-color: #9167d8;
             }
         }

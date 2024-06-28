@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produtos</title>
+    <link rel="stylesheet" href="../assets/styles/empresa/AdicionarProduto.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="stylesheet" href="../assets/styles/header.css">
+</head>
+
+<body>
+    <header>
+        <div class="main-info">
+            <a href="AdicionarProduto.html" class="logo">
+                <img src="../assets/images/site/Logo-alone.svg" alt="logo">
+            </a>
+            <div class="links">
+                <a href="home.html">Home</a>
+                <a href="produtos.html" class="active-page">Produtos</a>
+                <a href="Pedidos.html">Pedidos</a>
+            </div>
+        </div>
+        <div class="links-right">
+            <a href="perfil.html">
+                <img src="../assets/images/site/user-icon.png" alt="user icon">
+            </a>
+
+        </div>
+    </header>
+    <noscript>
+        O JavaScript é obrigatório! Por Favor Ative!
+    </noscript>
+    <div class="load">
+        <div class="custom-loader"></div>
+    </div>
+    <main>
+        <section class="illustration">
+            <img src="../assets/images/site/Shopping bag-amico 1.png" alt="bloco">
+        </section>
+        <section class="form-section">
+            <div class="form-product">
+                <h1 class="tt">Adicione seu novo produto:</h1>
+                <input type="text" id="name" placeholder="Nome do produto" class="form-input required" style="width: 30rem;">
+                <div class="dual-input">
+                    <input type="number" id="price" placeholder="Preço" class="form-input required" style="width: 30rem;">
+                    <input type="number" id="quantity" placeholder="Quantidade" class="form-input required"
+                        style="width: 30rem;">
+                </div>
+                <textarea type="text" id="description" placeholder="Descrição" class="form-input required"
+                    style="height: 15rem; width: 30rem;"></textarea>
+                <label class="imagem" for="SeleçaoImagem">
+                    <span class="imagem-span">Escolha uma imagem</span>
+                </label>
+                <input type="file" accept="image" id="SeleçaoImagem" />
+                <button type="button" id="register-button">Registrar Produto</button>
+                
+            </div>
+            <div class="error-box" style="display: flex; align-items: center;
+            justify-content: center;">
+                <p class="error-message"></p>
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/scripts/empresa/add-product.js" type="module"></script>
+</body>
+
+</html>

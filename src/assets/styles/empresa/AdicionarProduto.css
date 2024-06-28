@@ -3,17 +3,8 @@
     src: url('Poppins-Regular.ttf');
 }
 
-*{
-  font-family: 'Poppins-Regular';
-  font-size: 1rem;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    margin: 0;
-    padding: 0;
+header{
+    margin-bottom: 0px !important;
 }
 
 #SeleçaoImagem {
@@ -21,7 +12,7 @@ body {
 }
 
 .imagem {
-    width: 30rem;
+    width: 75%;
     height: 20rem;
     background: #eee;
     display: flex;
@@ -36,56 +27,52 @@ body {
     color: #888;
 }
 
-.form {
+.form-section{
+    width: 70%;
+    padding: 2rem;
     display: flex;
-    width: 40%;
     flex-direction: column;
-    gap: 10px;
-    margin-left: 50rem;
+    align-items: center;
+    justify-content: center;
 
-    & input {
-        font-size: 18px;
-        width: 70%;
+    & .form-product{
+        display: flex;
+        flex-direction: column;
+        align-items:  center;
+        justify-content: center;
+        width: 55%;
+        gap: 13.8px;
+
+        & input, textarea{
+            width: 75% !important;
+            font-size: 1.2rem;
+        }
+
+        & .dual-input{
+            gap: 10px;
+            width: 75%;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+
+            & input{
+                width: 50% !important;
+            }
+        }
     }
 
-
-
 }
 
-.tela {
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
 
 .illustration {
-    text-align: center;
-    justify-content: center;
-    margin: 0;
     width: 30%;
-    padding: 0;
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
     background: rgb(119, 1, 185);
-    background: linear-gradient(180deg, rgba(119, 1, 185, 0.5984768907563025) 35%, rgba(5, 1, 235, 0.5984768907563025) 100%);
-}
-
-.imgleft {
-    margin-top: 12.5rem;
-}
-
-.tt {
-    font-size: 2rem;
-    width: 30rem;
-    text-align: center;
-}
-
-.form {
-    margin-left: 25%;
-    margin-top: 5rem;
-    padding: 0;
-    text-align: center;
-    margin-top: 2rem;
-    height: 100vh;
+    background: linear-gradient(180deg, #7e57c28e 35%, #0501eb86 100%);
 }
 
 #register-button {
@@ -97,10 +84,14 @@ body {
     padding: 5px;
     border: none;
     border-radius: 20px;
-    width: 30rem;
+    width: 75%;
     cursor: pointer;
 }
 
 & #register-button:hover {
     opacity: 0.7;
+}
+
+main{
+    display: flex;
 }

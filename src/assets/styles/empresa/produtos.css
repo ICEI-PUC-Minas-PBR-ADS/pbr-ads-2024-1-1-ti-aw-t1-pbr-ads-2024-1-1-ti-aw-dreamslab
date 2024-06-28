@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('Poppins-Regular.ttf');
+}
+
+* {
+  font-family: 'Poppins-Regular';
+  font-size: 1rem;
+}
+
+body {
+  padding: 0;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.tela{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.btn {
+  align-self: flex-end;
+  padding: 10px 20px;
+  text-decoration: none;
+  position: relative;
+  left: -50px;
+  letter-spacing: 1px;
+  color: white;
+  background-color: #743DD2;
+  border-radius: 25px;
+  border: none;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.tabela {
+  margin-top: 10px;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+
+  & h2{
+    font-size: 1.6rem;
+  }
+}
+
+.name{
+  width: 65%;
+}
+
+.qnt, .price{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.act{
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produtos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 85%;
+}
+
+.item {
+  padding: 7px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+  transition: 0.2s;
+  cursor: pointer;
+
+  & p{
+    background-origin: padding-box;
+    font-size: 20px;
+  }
+}
+
+.item:hover{
+  background-color: rgb(224, 224, 224);
+  opacity: 80%;
+}
+
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0.2rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.nothing{
+  width: 100%;
+  height: 100px;
+  font-size: 23px;
+  margin-top: 5px;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 20prgb(243, 243, 243)
+}

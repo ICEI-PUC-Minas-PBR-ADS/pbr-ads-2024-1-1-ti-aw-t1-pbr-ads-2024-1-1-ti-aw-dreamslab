@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalize seu pedido!</title>
+  <link rel="stylesheet" href="assets/styles/global.css">
+  <link rel="stylesheet" href="assets/styles/confirmacao.css">
+  <link rel="stylesheet" href="assets/styles/header.css">
+  <link rel="shortcut icon" href="./assets/images/site/icon.svg" type="image/svg">
+</head>
+
+<body>
+  <noscript>
+    O JavaScript é obrigatório! Por Favor Ative!
+  </noscript>
+  <div class="load">
+    <div class="custom-loader"></div>
+  </div>
+  <header>
+    <div class="main-info">
+      <a href="home.html" class="logo">
+        <img src="../src/assets/images/site/Logo-alone.svg" alt="logo">
+      </a>
+      <div class="links">
+        <a href="home.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+      </div>
+    </div>
+    <div class="links-right">
+      <a href="perfil.html">
+        <img src="./assets/images/site/user-icon.png" alt="user icon">
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="page-top">
+      <h1>Finalize seu pedido:</h1>
+    </section>
+    <section class="page-content">
+      <div class="left-side">
+        <h1>Items</h1>
+        <div class="itens">
+          <div class="itens-list">
+            <div class="product">
+              <div>
+                <p>Pizza 4 Queijos</p>
+                <p>R$49,90</p>
+              </div>
+              <h1>1x</h1>
+            </div>
+          </div>
+          <div class="total-value">
+            <h1>Total:</h1>
+            <h1 class="final-value"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <h1>Dados do Pedido</h1>
+        <div>
+          <h2>Selecione o meio de pagamento:</h2>
+          <div class="payment-types">
+            <button type="button" class="payment-type" data-type="card">
+              <img src="./assets/images/site/cartao.png" alt="">
+              Cartão
+            </button>
+            <button type="button" class="payment-type" data-type="money">
+              <img src="./assets/images/site/money.png" alt="">
+              Dinheiro
+            </button>
+            <button type="button" class="payment-type" data-type="pix">
+              <img src="./assets/images/site/pix.webp" alt="">
+              PIX
+            </button>
+          </div>
+          <h2>Qual será a forma da entrega?</h2>
+          <div class="delivery-types">
+              <button type="button" class="delivery-type" data-type="delivery">
+                <img src="./assets/images/site/delivery.svg" alt="">
+                Delivery
+              </button>
+              <button type="button" class="delivery-type" data-type="in_place">
+                <img src="./assets/images/site/in_place.svg" alt="">
+                Buscar<br>Pedido
+              </button>
+              <button type="button" class="delivery-type" data-type="combined">
+                <img src="./assets/images/site/combinado.png" alt="">
+                Entrega 
+                à combinar
+              </button>
+          </div>
+        </div>
+        <div class="confirm-section">
+          <button id="confirm-order">Finalize seu pedido!</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./assets/scripts/users/confirm-order.js" type="module"></script>
+</body>
+
+</html>

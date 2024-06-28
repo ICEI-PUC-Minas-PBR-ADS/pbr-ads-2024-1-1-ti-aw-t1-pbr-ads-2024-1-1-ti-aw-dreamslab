@@ -15,7 +15,7 @@ $(function(){
     $(".logout").on("click", function(){
         localStorage.clear();
         location.reload();
-    })
+    });
     setHomeData();
 })
 

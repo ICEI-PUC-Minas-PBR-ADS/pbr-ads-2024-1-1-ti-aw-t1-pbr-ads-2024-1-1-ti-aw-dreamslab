@@ -4,56 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <link rel="stylesheet" href="assets/styles/empresa/ProdutosEmpresa.css">
-    <link rel="stylesheet" href="assets/styles/global.css">
-    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="../assets/styles/empresa/produtos.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="stylesheet" href="../assets/styles/header.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="main-info">
             <a href="ProdutosEmpresa.html" class="logo">
-                <img src="Logo-alone.svg" alt="logo">
+                <img src="../assets/images/site/Logo-alone.svg" alt="logo">
             </a>
             <div class="links">
                 <a href="home.html">Home</a>
                 <a href="produtos.html" class="active-page">Produtos</a>
-                <a href="Pedidos.html">Pedidos</a>
+                <a href="pedidos.html">Pedidos</a>
             </div>
         </div>
         <div class="links-right">
             <a href="perfil.html">
-                <img src="user-icon.png" alt="user icon">
+                <img src="../assets/images/site/user-icon.png" alt="user icon">
             </a>
           
         </div>
     </header>
-
+    <noscript>
+        O JavaScript é obrigatório! Por Favor Ative!
+    </noscript>
+    <div class="load">
+        <div class="custom-loader"></div>
+    </div>
     <div class="tela">
         <h1 class="titulo">Gerencie aqui os produtos da sua loja.</h1>
-        <button class="btn">Adicionar Produto</button>
-        <div class="tabela"><h2 class="tabela">Nome</h2>
-            <h2 class="tabela" style="margin-left: 30rem;">Quantidade</h2> 
-            <h2 class="tabela">Preço</h2> 
-            <h2 class="tabela" style="margin-right: 9rem;">Ações</h2>
-            
+        <a href="./adicionar-produto.html" class="btn">Adicionar Produto</a>
+        <div class="tabela">
+            <h2 class="name">Nome</h2>
+            <h2 class="qnt">Quantidade</h2> 
+            <h2 class="price">Preço</h2> 
+            <h2 class="act">Ações</h2>
         </div> 
-        
-        <ul class="produtos">
-            <hr>
-            <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-            <hr>
-            <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-            <hr>
-             <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-            <hr>
-             <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-            <hr>
-             <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-            <hr>
-             <li><div class="item">Produto x<p id="qnt">y</p><p id="price">z</p><p id="act"><img class="icoe" src="editar.png" alt="editar"><img class="icoe" src="excluir.png" alt="editar"></p></div> </li>
-        </ul>
+        <div class="produtos">
+            <div class="nothing">
+                Nenhum produto cadastrado ainda! :(
+            </div>
+            <!-- <div class="item">
+                <p class="name">Pizza Calabresa</p>
+                <p class="qnt">5</p>    
+                <p class="price">R$49,99</p>
+                <p class="act">
+                    <img class="icon edit" src="../assets/images/site/editar.png" alt="editar">
+                    <img class="icon delete" src="../assets/images/site/excluir.png" alt="editar">
+                </p>
+            </div> -->
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/scripts/empresa/list-products.js" type="module"></script>
 </body>
 </html>

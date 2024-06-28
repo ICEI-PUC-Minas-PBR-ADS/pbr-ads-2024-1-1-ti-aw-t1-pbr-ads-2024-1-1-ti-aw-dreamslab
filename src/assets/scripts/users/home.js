@@ -25,8 +25,42 @@ $(function(){
 function setHomeData(){
     new UsersController().getUserById().then((result)=>{
         $(".username").html(result.name + "!")
-        $(".load").remove();
     })
+
+    new ProductController().getAllProducts().then((result)=>{
+        $(".popular-orders").html("");
+        result.forEach(function(product){
+            $(".popular-orders").append(`
+                <div class="card" data-product-id=${product.data.id}>
+                    <img src="${product.data.img_path}" alt="product" style="width: 100%;">
+                    <div class="card-content">
+                        <h1 class="name">${product.data.name}</h1>
+                        <h2 class="price">R$${product.data.price}</h2>
+                    </div>
+                </div>
+                `);
+        })
+
+        $(".card").on("click", function(){
+            const itemId = $(this).data("product-id");
+            $(".modal-content").css("display", "flex");
+            $(".close-modal").css("display", "none");
+        
+            $(".loading-modal").animate({
+                height: "+=68%",
+                width: "+=49%",
+            }, 200);
+        
+            $(".product-modal").animate({
+                height: "+=70%",
+                width: "+=50%",
+            }, 200, function(){
+                $(".close-modal").css("display", "block");
+                setModalData(itemId);   
+            });
+        });
+        $(".load").remove();
+    });
 }
 
 $(".cart-icon").on("click", function(){
@@ -41,24 +75,6 @@ $(".close-cart").on("click", function(){
         right: "-=400"
     }, 200, ()=>{
         $(".cart-content").css("display", "none");
-    });
-});
-
-$(".card").on("click", function(){
-    $(".modal-content").css("display", "flex");
-    $(".close-modal").css("display", "none");
-
-    $(".loading-modal").animate({
-        height: "+=68%",
-        width: "+=49%",
-    }, 200);
-
-    $(".product-modal").animate({
-        height: "+=70%",
-        width: "+=50%",
-    }, 200, function(){
-        $(".close-modal").css("display", "block");
-        setModalData($(this).data("product-id"))   
     });
 });
 
@@ -85,12 +101,11 @@ function setModalData(productId){
             $(".loading-modal").append("<div class='modal-error'><br/><h1>Erro ao carregar dados do produto!</h1></div>");
             return;
         }
-        const product = result.product;
+        const product = result;
         $("#modal-image").attr("src", product.img_path);
         $("#modal-title").html(product.name);
-        $("#modal-price").html("R$" + product.price);
+        $("#modal-price").html("R$" + product.price),
         $("#modal-delivery").html(product.delivery_time),
-        $("#modal-frete").html("R$" + product.delivery_tax);
         $(".modal-description").html(product.description);
         $(".loading-modal").css("display", "none");
 
@@ -124,6 +139,7 @@ function addProductOnCart(product){
         item_id: product.id,
         name: product.name,
         price: product.price,
+        store_id: product.store_id,
         qntity: 1,
     }
 
@@ -158,7 +174,7 @@ function setCart(){
         $(".itens-on-cart").append('<div class="cart-item item-'+ eachItem.item_id +'">' +
                         '<div class="cart-item-title">' +
                             '<h1>'+ eachItem.name +'</h1>' +
-                            '<h1>'+ eachItem.price +'</h1>' +
+                            '<h1>R$ '+ eachItem.price +'</h1>' +
                         '</div>' +
                         '<div class="cart-item-actions">' +
                             '<h2 class="item-quantity">'+eachItem.qntity+'x</h2>' +

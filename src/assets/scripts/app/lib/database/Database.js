@@ -19,7 +19,7 @@ class Database {
         return dataList;
     }
 
-    async getByField(table, field, value) {
+    async getByField(table, field, value, multiple = false) {
         const dataCollection = collection(db, table);
         const dataQuery = query(dataCollection, where(field, "==", value));
         const querySnapshot = await getDocs(dataQuery);
@@ -30,7 +30,7 @@ class Database {
         if(typeof dataById[0] === 'undefined'){
             return [];
         }
-        return dataById[0];
+        return multiple == false ? dataById[0] : dataById;
     }
 
     async getLastId(table){
