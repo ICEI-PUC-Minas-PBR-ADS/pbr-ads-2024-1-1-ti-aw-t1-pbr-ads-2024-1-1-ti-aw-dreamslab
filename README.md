@@ -9,6 +9,10 @@
 O projeto da Dreams Lab é um projeto que busca solucionar o problema existente entre padarias e clientes com a logística de realizações de encomendas e entregas de produtos, contando também funcionalidades para facilitar
 o controle de estoque das padarias.
 
+## Link do Site
+
+* Link: https://icei-puc-minas-pbr-ads.github.io/pbr-ads-2024-1-1-ti-aw-t1-pbr-ads-2024-1-1-ti-aw-dreamslab/src/login.html
+
 ## Integrantes
 
 * Gabriela dos Reis da Silva
